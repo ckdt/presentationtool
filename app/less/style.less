@@ -1,0 +1,214 @@
+// Core variables and mixins
+@import "variables.less";
+@import "../bootstrap/less/mixins.less";
+
+// Reset and dependencies
+@import "../bootstrap/less/normalize.less";
+// @import "../bootstrap/less/print.less";
+// @import "../bootstrap/less/glyphicons.less";
+
+// Core CSS
+@import "../bootstrap/less/scaffolding.less";
+@import "../bootstrap/less/type.less";
+// @import "../bootstrap/less/code.less";
+@import "../bootstrap/less/grid.less";
+// @import "../bootstrap/less/tables.less";
+// @import "../bootstrap/less/forms.less";
+// @import "../bootstrap/less/buttons.less";
+
+// Components
+// @import "../bootstrap/less/component-animations.less";
+// @import "../bootstrap/less/dropdowns.less";
+// @import "../bootstrap/less/button-groups.less";
+// @import "../bootstrap/less/input-groups.less";
+// @import "../bootstrap/less/navs.less";
+// @import "../bootstrap/less/navbar.less";
+// @import "../bootstrap/less/breadcrumbs.less";
+// @import "../bootstrap/less/pagination.less";
+// @import "../bootstrap/less/pager.less";
+// @import "../bootstrap/less/labels.less";
+// @import "../bootstrap/less/badges.less";
+// @import "../bootstrap/less/jumbotron.less";
+// @import "../bootstrap/less/thumbnails.less";
+// @import "../bootstrap/less/alerts.less";
+// @import "../bootstrap/less/progress-bars.less";
+// @import "../bootstrap/less/media.less";
+// @import "../bootstrap/less/list-group.less";
+// @import "../bootstrap/less/panels.less";
+@import "../bootstrap/less/responsive-embed.less";
+// @import "../bootstrap/less/wells.less";
+// @import "../bootstrap/less/close.less";
+
+// Components w/ JavaScript
+// @import "../bootstrap/less/modals.less";
+// @import "../bootstrap/less/tooltip.less";
+// @import "../bootstrap/less/popovers.less";
+// @import "../bootstrap/less/carousel.less";
+
+// Utility classes
+@import "../bootstrap/less/utilities.less";
+@import "../bootstrap/less/responsive-utilities.less";
+
+// Fontawesome
+// @import "../less/font-awesome/font-awesome.less";
+
+// fullPageJS
+@import "../fullPage.js-master/jquery.fullPage.less";
+
+//Fonts
+@body-font-path: "../fonts/";
+
+@font-face {
+    font-family:'NeuzeitGroteskBold';
+    src: url('@{body-font-path}NeuzeitGroteskBold.eot');
+    src: url('@{body-font-path}NeuzeitGroteskBold.eot') format('embedded-opentype'),
+         url('@{body-font-path}NeuzeitGroteskBold.woff2') format('woff2'),
+         url('@{body-font-path}NeuzeitGroteskBold.woff') format('woff'),
+         url('@{body-font-path}NeuzeitGroteskBold.ttf') format('truetype'),
+         url('@{body-font-path}NeuzeitGroteskBold.svg#NeuzeitGroteskBold') format('svg');
+}
+@font-face {
+    font-family:'apercuregular';
+    src: url('@{body-font-path}apercuregularul-webfont.eot');
+    src: url('@{body-font-path}apercuregularul-webfont.eot?#iefix') format('embedded-opentype'),
+         url('@{body-font-path}apercuregularul-webfont.woff') format('woff'),
+         url('@{body-font-path}apercuregularul-webfont.ttf') format('truetype'),
+         url('@{body-font-path}apercuregularul-webfont.svg#apercubold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// temporary
+.container, .container-fluid{
+	background-color:pink;
+}
+
+// typography
+
+// main
+.section{
+	overflow:hidden;
+}
+.slidetextchapter{
+	width:800px;
+	margin:396px auto 0;
+}
+.slidetexttext{
+	width:1000px;
+	margin:0 auto;
+}
+button{
+	width:297px;
+	height:98px;
+	background:#1E1FA7;
+	font-size:48px;
+	color:#fff;
+	border:1px solid #1E1FA7;
+	border-radius:4px;
+}
+button:hover{
+	background:#eee;
+}
+.buttonwrap{
+	width:297px;
+	margin:0 auto;
+}
+
+// Slide type 'chapter'
+.chapter{	
+	background: url('../img/bluegreenhouse.jpg') center center no-repeat;
+	header{
+		position:absolute;
+		top:100px;
+		width:100%;
+		font-size:20px;
+		font-family: 'apercuregular';
+	}
+	footer{
+		position:absolute;
+		bottom:100px;
+		width:100%;
+		font-size:18px;
+		font-family: 'apercuregular';
+	}
+}
+
+// Slide type 'text'
+.text{
+	background: url("../img/bluegreenhouse.jpg") center center no-repeat;
+
+	.sectionwrapper{
+		width:100%;
+		height:100%;
+		padding:30px;
+		z-index:1;
+		position:absolute;
+		
+		.slidewrapper{
+			background-color:white;
+			height: 100%;
+			color:#000;
+
+			.slidetexttext{
+				width:1000px;
+				margin:0 auto;
+				header{
+					position:relative;
+					font-size:20px;
+					top:70px;
+					font-family: 'apercuregular';
+				}
+				h2:first-child{
+					margin:173px auto 40px;
+				}
+				footer{
+					position:relative;
+					bottom:-224px;
+					font-size:18px;
+					font-family: 'apercuregular';
+				}
+			}
+		}
+	}
+}
+
+// Slide type 'video'
+.video{
+	#myVideo{
+		position: absolute;
+		bottom: 0;
+		top:0;
+		right:0;
+		width:100%;
+		height:100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+	.slidewrappervid{
+		height: 100%;
+		width:100%;
+		position: absolute;
+		z-index: 4;
+		color:black;
+
+		header{
+			position:absolute;
+			top:40px;
+			width:100%;
+			font-family: 'apercuregular';
+		}
+
+		footer{
+			position:absolute;
+			bottom:40px;
+			width:100%;
+			font-family: 'apercuregular';
+		}
+	}
+}
