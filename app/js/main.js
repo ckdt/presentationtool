@@ -19,7 +19,18 @@
 
 	//Fullpage JS
     $('#fullpage').fullpage({
+        menu: false,
+        anchors:['first', 'second', 'third', 'fourth'],
         navigation: true,
-        verticalCentered: false
+        navigationPosition: 'right',
+        navigationTooltips: ['first', 'second', 'third', 'fourth'],
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+        
+        verticalCentered: false,
+        afterRender: function(index, nextIndex, direction){
+            $('video').get(0).pause();
+            console.log(index, nextIndex, direction);
+        },
     });
 });
