@@ -1,0 +1,265 @@
+/* ############### BOOTSTRAP ############### */
+
+// Core variables and mixins
+@import "variables.less";
+@import "../lib/bootstrap-3.3.2/less/mixins.less";
+
+// Reset and dependencies
+@import "../lib/bootstrap-3.3.2/less/normalize.less";
+// @import "../lib/bootstrap-3.3.2/less/print.less";
+// @import "../lib/bootstrap-3.3.2/less/glyphicons.less";
+
+// Core CSS
+@import "../lib/bootstrap-3.3.2/less/scaffolding.less";
+// @import "../lib/bootstrap-3.3.2/less/type.less";
+// @import "../lib/bootstrap-3.3.2/less/code.less";
+@import "../lib/bootstrap-3.3.2/less/grid.less";
+// @import "../lib/bootstrap-3.3.2/less/tables.less";
+// @import "../lib/bootstrap-3.3.2/less/forms.less";
+// @import "../lib/bootstrap-3.3.2/less/buttons.less";
+
+// Components
+// @import "../lib/bootstrap-3.3.2/less/component-animations.less";
+// @import "../lib/bootstrap-3.3.2/less/dropdowns.less";
+// @import "../lib/bootstrap-3.3.2/less/button-groups.less";
+// @import "../lib/bootstrap-3.3.2/less/input-groups.less";
+// @import "../lib/bootstrap-3.3.2/less/navs.less";
+// @import "../lib/bootstrap-3.3.2/less/navbar.less";
+// @import "../lib/bootstrap-3.3.2/less/breadcrumbs.less";
+// @import "../lib/bootstrap-3.3.2/less/pagination.less";
+// @import "../lib/bootstrap-3.3.2/less/pager.less";
+// @import "../lib/bootstrap-3.3.2/less/labels.less";
+// @import "../lib/bootstrap-3.3.2/less/badges.less";
+// @import "../lib/bootstrap-3.3.2/less/jumbotron.less";
+// @import "../lib/bootstrap-3.3.2/less/thumbnails.less";
+// @import "../lib/bootstrap-3.3.2/less/alerts.less";
+// @import "../lib/bootstrap-3.3.2/less/progress-bars.less";
+// @import "../lib/bootstrap-3.3.2/less/media.less";
+// @import "../lib/bootstrap-3.3.2/less/list-group.less";
+// @import "../lib/bootstrap-3.3.2/less/panels.less";
+@import "../lib/bootstrap-3.3.2/less/responsive-embed.less";
+// @import "../lib/bootstrap-3.3.2/less/wells.less";
+// @import "../lib/bootstrap-3.3.2/less/close.less";
+
+// Components w/ JavaScript
+// @import "../lib/bootstrap-3.3.2/less/modals.less";
+// @import "../lib/bootstrap-3.3.2/less/tooltip.less";
+// @import "../lib/bootstrap-3.3.2/less/popovers.less";
+// @import "../lib/bootstrap-3.3.2/less/carousel.less";
+
+// Utility classes
+@import "../lib/bootstrap-3.3.2/less/utilities.less";
+@import "../lib/bootstrap-3.3.2/less/responsive-utilities.less";
+
+/* ############### / BOOTSTRAP ############### */
+
+
+/* ############### FULLPAGE JS ############### */
+// fullPageJS
+@import "../lib/fullPage.js-master/less/jquery.fullPage.less";
+/* ############### / FULLPAGE JS ############### */
+
+
+/* ############### THEME STYLES ############### */
+
+//Fonts
+@font-face {
+    font-family:'NeuzeitGroteskBold';
+    src: url('@{body-font-path}NeuzeitGroteskBold.eot');
+    src: url('@{body-font-path}NeuzeitGroteskBold.eot') format('embedded-opentype'),
+         url('@{body-font-path}NeuzeitGroteskBold.woff2') format('woff2'),
+         url('@{body-font-path}NeuzeitGroteskBold.woff') format('woff'),
+         url('@{body-font-path}NeuzeitGroteskBold.ttf') format('truetype'),
+         url('@{body-font-path}NeuzeitGroteskBold.svg#NeuzeitGroteskBold') format('svg');
+}
+@font-face {
+    font-family:'ApercuRegular';
+    src: url('@{body-font-path}ApercuRegular.eot');
+    src: url('@{body-font-path}ApercuRegular.eot?#iefix') format('embedded-opentype'),
+         url('@{body-font-path}ApercuRegular.woff') format('woff'),
+         url('@{body-font-path}ApercuRegular.ttf') format('truetype'),
+         url('@{body-font-path}ApercuRegular.svg#apercubold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	-webkit-font-smoothing: antialiased;
+	font-size: 100%;
+	color: #fff;
+}
+
+strong{
+	font-weight: normal;
+	color: #1E1FA7;
+}
+
+.button{
+	background: #1E1FA7;
+	color: #fff;
+	padding: 20px 30px 10px 30px;
+	line-height: 48px;
+	text-decoration: none;
+	border: none;
+	border-radius: 4px;
+}
+
+.button:hover{
+	color: #141414;
+	text-decoration: none;
+}
+
+.section{
+	overflow: hidden;
+	background-size: cover;
+	text-align: center;
+
+	.section-content{
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+	}
+
+	.section-title{
+		h2{
+			font-family: 'ApercuRegular',sans-serif;
+			font-size: 20px;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			font-weight: normal;
+		}
+	}
+
+	.section-body{
+		display: table;
+		width: 100%;
+		height:80%;
+		/*background: red;*/
+
+		.wrap{
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		h1{
+			font-family: 'NeuzeitGroteskBold',sans-serif;
+			font-size: 72px;
+			letter-spacing: -2px;
+			line-height: 82px;
+			font-weight: normal;
+		}
+	}
+
+	.section-footer{
+		p{
+			font-family: 'ApercuRegular',sans-serif;
+			font-size: 18px;
+			letter-spacing: 0.5px;
+			font-weight: normal;
+		}
+	}
+
+	&.text{
+		padding: 30px;
+
+		.section-content{
+			background: #fff;
+			color: #141414;
+			
+			.section-title h2{
+				color: #ADADAD;
+			}
+			.section-body p{
+				margin:0 auto 58px auto;
+				max-width: 960px;
+				font-family: 'NeuzeitGroteskBold',sans-serif;
+				font-size: 48px;
+				letter-spacing: -1px;
+				line-height: 58px;
+				font-weight: normal;
+			}
+			.section-footer p{
+				color: #ADADAD;
+			}
+		}
+	}
+
+	&.image{
+		.fit{
+			background: #000;
+			/* Dit moet nog goed worden herzien */
+			.section-title h2{
+				color: #ADADAD;
+			}
+			.section-body{
+				img{
+					max-width:100%;
+					max-height:100%;
+				}
+			}
+			.section-footer p{
+				color: #ADADAD;
+			}
+		}
+
+		.fill{
+			position: relative;
+			overflow: hidden;
+			/* Dit moet nog goed worden herzien */
+			.section-bg{
+				position: absolute;
+				bottom: 0;
+				top:0;
+				right:0;
+				width:100%;
+				height:100%;
+				z-index:3;
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+			.section-content{
+				position: relative;
+				z-index: 10;
+				background: rgba(0, 0, 0, 0.2)
+			}
+			.section-title{
+				margin-bottom: 71%;
+			}
+		}
+	}
+
+	&.video{
+		video{
+			position: absolute;
+			bottom: 0;
+			top:0;
+			right:0;
+			width:100%;
+			height:100%;
+			background-size: 100% 100%;
+			background-color: black; /* in case the video doesn't fit the whole page*/
+			background-image: /* our video */;
+			background-position: center center;
+			background-size: contain;
+			object-fit: cover; /*cover video background */
+			z-index:3;
+		}
+
+		.section-content{
+			position: relative;
+			z-index: 10;
+			background: rgba(0, 0, 0, 0.4)
+		}
+	}
+
+}
+
+
+#one,
+#three{
+	background-color: transparent;
+	background-image: url('../img/bluegreenhouse.jpg');
+	background-repeat: no-repeat;
+}
