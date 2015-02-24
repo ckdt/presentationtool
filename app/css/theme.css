@@ -1486,6 +1486,40 @@ strong {
   display: table-cell;
   vertical-align: middle;
 }
+.section .section-body .imgcontainer {
+  width: 1000px;
+  height: 750px;
+  margin: 0 auto;
+  background-color: pink;
+  overflow: hidden;
+  text-align: center;
+  font: 0/0 a;
+}
+.section .section-body .imgcontainer:before {
+  /* create a full-height inline block pseudo=element */
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  /* vertical alignment of the inline element */
+  height: 100%;
+}
+.section .section-body .imgcontainer img {
+  display: inline-block;
+}
+.section .section-body .verticalalign img {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: green;
+  font: 16px/1 Arial sans-serif;
+  /* <-- reset the font property */
+}
+.section .section-body .landscape img {
+  width: 100%;
+}
+.section .section-body .portrait img {
+  height: 100%;
+  margin: 0 auto;
+}
 .section .section-body h1 {
   font-family: 'NeuzeitGroteskBold', sans-serif;
   font-size: 72px;

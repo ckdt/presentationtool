@@ -34,3 +34,31 @@
         },
     });
 });
+
+// .load() is an unreliable function, but it works for now...
+$(window).load(function(){
+	$(".imgcontainer").each(function(){
+
+	var el = $(this);	
+	var refH = el.height();
+	var refW = el.width();
+	var refRatio = refW/refH;
+
+	console.log(refH, refW, refRatio);
+
+	var imgH = el.children("img").height();
+	var imgW = el.children("img").width();
+
+	var picRatio = imgW/imgH;
+
+	var src = el.children("img").attr('src');
+
+	console.log(src, imgH, imgW);
+
+	    if ( picRatio < refRatio ) { 
+	        $(this).addClass("portrait");
+	    } else {
+	        $(this).addClass("verticalalign landscape");
+	    }
+	});
+});
