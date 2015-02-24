@@ -1507,7 +1507,6 @@ strong {
   display: inline-block;
 }
 .section .section-body .verticalalign img {
-  display: inline-block;
   vertical-align: middle;
   background-color: green;
   font: 16px/1 Arial sans-serif;
