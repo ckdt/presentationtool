@@ -1,32 +1,4 @@
- (function($,sr){
-
-  // debouncing function from John Hann
-  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-  var debounce = function (func, threshold, execAsap) {
-      var timeout;
-
-      return function debounced () {
-          var obj = this, args = arguments;
-          function delayed () {
-              if (!execAsap)
-                  func.apply(obj, args);
-              timeout = null;
-          };
-
-          if (timeout)
-              clearTimeout(timeout);
-          else if (execAsap)
-              func.apply(obj, args);
-
-          timeout = setTimeout(delayed, threshold || 100);
-      };
-  }
-  // smartresize 
-  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-
-})(jQuery,'smartresize');
-
- $(document).ready(function() {
+$(document).ready(function() {
 
  	// User Agent Variables
 	var isPhone = false;
@@ -54,12 +26,25 @@
         navigationTooltips: ['first', 'second', 'third', 'fourth'],
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
-        
         verticalCentered: false,
-        afterRender: function(index, nextIndex, direction){
-            $('video').get(0).pause();
-            console.log(index, nextIndex, direction);
+        onLeave: function(index, nextIndex, direction){
+        	var current = $(this);
+        	if(current.hasClass('video')){
+        		$(current).find('video').get(0).pause();
+        	}
         },
+        afterLoad: function(anchorLink, index){
+        	var current = $(this);
+        	if(current.hasClass('video')){
+        		$(current).find('video').get(0).play();
+        	}
+        },
+        afterRender: function(){},
+        afterResize: function(){},
+        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+        },
+        onSlideLeave: function(anchorLink, index, slideIndex, direction){
+        }
     });
 
 	function setImageRatio(){
