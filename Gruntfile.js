@@ -45,7 +45,8 @@ module.exports = function(grunt) {
 					{expand: true, cwd: 'app/js/vendor', src: ['*'], dest: 'js/vendor/'},
 					{expand: true, cwd: 'app/img/', src: ['*'], dest: 'img/'},
 					{expand: true, cwd: 'app/video/', src: ['*'], dest: 'video/'},
-					{expand: true, cwd: 'app/fonts/', src: ['*'], dest: 'fonts/'}
+					{expand: true, cwd: 'app/fonts/', src: ['*'], dest: 'fonts/'},
+					{expand: true, cwd: 'app/templates/', src: ['*'], dest: 'templates/'}
 				]
 			}
 		},
