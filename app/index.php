@@ -4,7 +4,6 @@
  * @subpackage New_Business
  * @since New Business 0.0.1
  */
-
 get_header(); ?>
 <div id="fullpage">
 
