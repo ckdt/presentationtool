@@ -7,8 +7,8 @@
 ?>
 <section class="section video" id="two" style="background-image: url(<?php echo $fallback["sizes"]["large"]; ?>)">
 	<video loop muted controls="false" id="thevideo">
-		<source src="video/284081672.mp4" type="video/mp4">
-		<source src="video/284081672.webm" type="video/webm">
+		<source src="<?php echo $video; ?>" type="video/mp4">
+		<!-- <source src="video/284081672.webm" type="video/webm"> -->
 	</video>
 	<div class="section-content">
 		

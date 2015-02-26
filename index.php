@@ -6,7 +6,6 @@
  */
 get_header(); ?>
 <div id="fullpage">
-
 <?php if ( $slides = get_field( 'slides' ) ): ?>
 	<?php while ( has_sub_field( 'slides' ) ): ?>
 		<?php if ( get_row_layout() == 'chapter' ): // layout: Chapter ?>
@@ -37,13 +36,15 @@ get_header(); ?>
 
 <?php endif; ?>
 
-
+<!-- 
 <?php
 $fields = get_fields();
 echo '<pre>';
 var_dump( $fields ); 
 echo '</pre>';
 ?>
+
+-->
 
 </div>
 <?php get_footer(); ?>
