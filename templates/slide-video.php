@@ -1,10 +1,15 @@
 <?php
-	$title = get_sub_field( 'chapter_title' );
-	$name = get_sub_field( 'chapter_name' );
-	$note = get_sub_field( 'chapter_note' );
-	$background  = get_sub_field( 'chapter_background' );
+	$title = get_sub_field( 'video_title' );
+	$name = get_sub_field( 'video_name' );
+	$note = get_sub_field( 'video_note' );
+	$video = get_sub_field( 'video_url' );
+	$fallback  = get_sub_field( 'video_fallback' );
 ?>
-<section class="section chapter" id="one" style="background-image: url(<?php echo $background["sizes"]["large"]; ?>)">
+<section class="section video" id="two" style="background-image: url(<?php echo $fallback["sizes"]["large"]; ?>)">
+	<video loop muted controls="false" id="thevideo">
+		<source src="video/284081672.mp4" type="video/mp4">
+		<source src="video/284081672.webm" type="video/webm">
+	</video>
 	<div class="section-content">
 		
 		<?php if(isset($title) && $title != "" ): ?>

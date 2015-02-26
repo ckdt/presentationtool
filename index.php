@@ -12,6 +12,19 @@ get_header(); ?>
 		<?php if ( get_row_layout() == 'chapter' ): // layout: Chapter ?>
 			<?php get_template_part( 'templates/slide', 'chapter' ); ?>
 		<?php endif; ?>
+		<?php if ( get_row_layout() == 'video' ): // layout: Video ?>
+			<?php get_template_part( 'templates/slide', 'video' ); ?>
+		<?php endif; ?>
+		<?php if ( get_row_layout() == 'text' ): // layout: Text ?>
+			<?php get_template_part( 'templates/slide', 'text' ); ?>
+		<?php endif; ?>
+		<?php if ( get_row_layout() == 'image_presenter' ): // layout: Image Presenter ?>
+			<?php get_template_part( 'templates/slide', 'presenter' ); ?>
+		<?php endif; ?>
+		<?php if ( get_row_layout() == 'default' ): // layout: Default ?>
+			<?php get_template_part( 'templates/slide', 'relation' ); ?>
+		<?php endif; ?>
+
 	<?php endwhile; ?>
 <?php else : // No blocks added yet ?>
 <div class="container">
