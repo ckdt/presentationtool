@@ -1463,6 +1463,8 @@ strong {
 .section {
   overflow: hidden;
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   text-align: center;
 }
 .section .section-content {
@@ -1498,6 +1500,9 @@ strong {
   font-size: 18px;
   letter-spacing: 0.5px;
   font-weight: normal;
+}
+.section.password {
+  background-image: url('../img/bluegreenhouse.jpg');
 }
 .section.text {
   padding: 30px;
