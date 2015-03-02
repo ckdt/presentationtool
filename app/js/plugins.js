@@ -82,10 +82,6 @@ e.setKeyboardScrolling(!1);f.addClass("fp-destroyed");c(k).off("scroll",Z).off("
 
 // debouncing function from John Hann
 // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-<<<<<<< HEAD
-
-=======
->>>>>>> eb060c1d8469e6189dac9afe037cb99f985ae838
 (function($,sr){ 
   var debounce = function (func, threshold, execAsap) {
       var timeout;
