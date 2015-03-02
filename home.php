@@ -19,8 +19,6 @@ print_r($pres);
 <?php if( $pres ) : ?>
 <?php foreach( $pres as $post ) : setup_postdata( $post ); ?>
 
-
-
 		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 	<?php endforeach; ?>

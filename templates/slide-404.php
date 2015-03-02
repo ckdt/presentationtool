@@ -1,15 +1,15 @@
-<section class="section password">
+<section class="section notice">
 	<div class="section-content">
 		<header class="section-title">
-			<h2><?php the_title(); ?></h2>
+			<h2>notice</h2>
 		</header>
 		<div class="section-body">
 			<div class="wrap">
-				<h1><?php echo get_the_password_form(); ?></h1>
+				<h1>This presentation doesn't have any slides yet</h1>
 			</div>
 		</div>
 		<footer class="section-footer">
-			<p>Please enter your password</p>
+			<p>Please login and add some slides</p>
 		</footer>
 	</div>
 </section>
