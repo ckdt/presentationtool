@@ -5,7 +5,6 @@
  * @since New Business 0.0.1
  */
 get_header(); ?>
-<div id="fullpage">
 <?php if ( $slides = get_field( 'slides' ) ): ?>
 	<?php while ( has_sub_field( 'slides' ) ): ?>
 		<?php if ( get_row_layout() == 'chapter' ): // layout: Chapter ?>
@@ -45,6 +44,4 @@ echo '</pre>';
 ?>
 
 -->
-
-</div>
 <?php get_footer(); ?>
