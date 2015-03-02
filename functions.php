@@ -37,6 +37,13 @@ function business_theme_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'business_theme_scripts' );
 
+function business_theme_admin_scripts() {
+    wp_register_style( 'add-admin-stylesheet', get_template_directory_uri().'/css/admin.theme.css');
+    wp_enqueue_style( 'add-admin-stylesheet' );
+}
+
+add_action( 'admin_enqueue_scripts', 'business_theme_admin_scripts' );
+
 
 function business_register_customposts() {
     register_post_type('presentation',
@@ -118,3 +125,21 @@ function business_customm_afc_toolbars( $toolbars ){
 	return $toolbars;
 }
 add_filter( 'acf/fields/wysiwyg/toolbars' , 'business_customm_afc_toolbars'  );
+
+function my_password_form() {
+    global $post;
+    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+    $o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
+    ' . __( "To view this protected post, enter the password below:" ) . '
+    <label for="' . $label . '">' . __( "Password:" ) . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><input type="submit" name="Submit" value="' . esc_attr__( "Submit" ) . '" />
+    </form>
+    ';
+    return $o;
+}
+add_filter( 'the_password_form', 'my_password_form' );
+
+
+
+
+
+
