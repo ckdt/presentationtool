@@ -15,7 +15,8 @@ module.exports = function(grunt) {
 		less: {
 			dev: {
 				files: {
-					'app/css/theme.css': 'app/less/theme.less'
+					'app/css/theme.css': 'app/less/theme.less',
+					'app/css/admin.theme.css': 'app/less/admin.theme.less'
 				}
 			},
 			dist: {
@@ -25,7 +26,8 @@ module.exports = function(grunt) {
 					optimization: 2
 				},
 				files: {
-					'css/theme.min.css': ['app/less/theme.less']
+					'css/theme.min.css': 'app/less/theme.less',
+					'css/admin.theme.min.css': 'app/less/admin.theme.less'
 				}
 			}
 		},
@@ -45,7 +47,8 @@ module.exports = function(grunt) {
 					{expand: true, cwd: 'app/js/vendor', src: ['*'], dest: 'js/vendor/'},
 					{expand: true, cwd: 'app/img/', src: ['*'], dest: 'img/'},
 					{expand: true, cwd: 'app/video/', src: ['*'], dest: 'video/'},
-					{expand: true, cwd: 'app/fonts/', src: ['*'], dest: 'fonts/'}
+					{expand: true, cwd: 'app/fonts/', src: ['*'], dest: 'fonts/'},
+					{expand: true, cwd: 'app/templates/', src: ['*'], dest: 'templates/'}
 				]
 			}
 		},
@@ -55,7 +58,8 @@ module.exports = function(grunt) {
 					'footer.php' : 'app/footer.php',
 					'functions.php' : 'app/functions.php',
 					'header.php' : 'app/header.php',
-					'index.php' : 'app/index.php'
+					'index.php' : 'app/index.php',
+					'home.php' : 'app/home.php'
 				}
 			}
 		}
