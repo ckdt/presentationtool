@@ -8,22 +8,26 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'dist/js/scripts.min.js': ['app/scripts/plugins.js', 'app/scripts/main.js']
+					'js/scripts.min.js': ['app/js/plugins.js', 'app/js/main.js']
 				}
 			}
 		},
 		less: {
 			dev: {
 				files: {
-					'app/css/style.css': 'app/less/style.less'
+					'app/css/theme.css': 'app/less/theme.less',
+					'app/css/admin.theme.css': 'app/less/admin.theme.less'
 				}
 			},
 			dist: {
 				options: {
-					yuicompress: true
+					compress: true,
+					yuicompress: true,
+					optimization: 2
 				},
 				files: {
-					'dist/css/style.min.css': ['app/less/style.less']
+					'css/theme.min.css': 'app/less/theme.less',
+					'css/admin.theme.min.css': 'app/less/admin.theme.less'
 				}
 			}
 		},
@@ -33,25 +37,29 @@ module.exports = function(grunt) {
 				tasks: 'less'
 			},
 			uglify: {
-				files: ['app/scripts/*'],
+				files: ['app/js/*'],
 				tasks: 'uglify'
 			}
 		},
 		copy: {
 			dist: {
 				files: [
-					{expand: true, cwd: 'app/scripts/vendor', src: ['*'], dest: 'dist/scripts/vendor/'},
-					{expand: true, cwd: 'app/img/', src: ['*'], dest: 'dist/img/'},
-					{expand: true, cwd: 'app/video/', src: ['*'], dest: 'dist/video/'},
-					{expand: true, cwd: 'app/fonts/', src: ['*'], dest: 'dist/fonts/'}
+					{expand: true, cwd: 'app/js/vendor', src: ['*'], dest: 'js/vendor/'},
+					{expand: true, cwd: 'app/img/', src: ['*'], dest: 'img/'},
+					{expand: true, cwd: 'app/video/', src: ['*'], dest: 'video/'},
+					{expand: true, cwd: 'app/fonts/', src: ['*'], dest: 'fonts/'},
+					{expand: true, cwd: 'app/templates/', src: ['*'], dest: 'templates/'}
 				]
 			}
 		},
 		targethtml: {
 			dist: {
 				files: {
-					'dist/index.html' : 'app/index.html',
-					'dist/product.html' : 'app/product.html'
+					'footer.php' : 'app/footer.php',
+					'functions.php' : 'app/functions.php',
+					'header.php' : 'app/header.php',
+					'index.php' : 'app/index.php',
+					'home.php' : 'app/home.php'
 				}
 			}
 		}

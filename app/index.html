@@ -10,90 +10,195 @@
 		<meta name="viewport" content="width=device-width">
 
 		<!--(if target dev)><!-->
-		<link rel="stylesheet" href="css/style.css">
-		<script src="scripts/vendor/modernizr-2.8.3.min.js"></script>
+		<link rel="stylesheet" href="css/theme.css">
+		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
 		<!--<!(endif)-->
 
 		<!--(if target dist)><!-->
 		<!-- <link rel="stylesheet" href="css/style.min.css"> -->
 		<!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
 		<!--<!(endif)-->
-		
-	
 	</head>
 	<body>
 		<div id="fullpage">
+			<section class="section chapter" id="one">
+				<div class="section-content">
+					<header class="section-title">
+						<h2>chapter</h2>
+					</header>
+					<div class="section-body">
+						<div class="wrap">
+							<h1>This is the entire name </br> of this chapter.</h1>
+						</div>
+					</div>
+					<footer class="section-footer">
+						<p>This is just a little note to show you what the </br> chapter slide will look like.</p>
+					</footer>
+				</div>
+			</section>
 
-		    <div class="section chapter" id="section1">
-			    	<header class="text-center text-uppercase">title / slide type: 'chapter'</header>
-			    	<div class="slidetextchapter">
-				    	<h1 class="text-center">This is the entire name </br> of this chapter.</h1>
-				    </div>
-			    	<footer class="text-center">This is just a little note to show you what the </br> chapter slide will look like.</footer>
-		    </div>
-
-		    <div class="section text" id="section2">
-		    	
-		    	<div class="sectionwrapper">
-			    	
-			    	<div class="slidewrapper">
-
-			    		<div class="slidetexttext">
-					    	<header class="text-center text-uppercase">title / slide type: 'text'</header>
-					    	<h2 class="text-center">Phasellus id auctor odio. Curabitur facilisis faucibus magna eget mattis. Quisque imperdiet ante ut erat mattis consectetur.</h2>
-				    		<h2 class="text-center">Ut rhoncus nisl id diam luctus vestibulum. Donec dictum nisl nibh, scelerisque vehicula quam facilisis vel.</h2>
-				    	</div>
-
-				    	<div class="buttonwrap">
-					    	<button>Download</button>
-					    </div>
-				    	
-				    	<footer class="text-center text-uppercase">This is just a little note to show you what the </br> chapter slide will look like.</footer>
-				    </div>
-
-			    </div>
-			    
-		    </div>
-		    
-		    <div class="section video" id="section4">
-
-		    	<video loop muted controls="false" id="myVideo">
-					<source src="http://player.vimeo.com/external/118603116.hd.mp4?s=4d08c761585f92adbd658537978ab31f" type="video/mp4">
-					<!-- <source src="imgs/flowers.webm" type="video/webm"> -->
+			<section class="section video" id="two">
+				<video loop muted controls="false" id="thevideo">
+					<source src="video/284081672.mp4" type="video/mp4">
+					<source src="video/284081672.webm" type="video/webm">
 				</video>
+				<div class="section-content">
+					<header class="section-title">
+						<h2>video</h2>
+					</header>
+					<div class="section-body">
+						<div class="wrap">
+							<h1>This is the entire name </br> of this chapter.</h1>
+						</div>
+					</div>
+					<footer class="section-footer">
+						<p>This is just a little note to show you what the </br> video slide will look like.</p>
+					</footer>
+				</div>
+			</section>
 
-		    	<div class="slidewrappervid">
-			    	<header class="text-center text-uppercase">title / slide type: 'text'</header>
+			<section class="section text" id="three">
+				<div class="section-content">
+					<header class="section-title">
+						<h2>text</h2>
+					</header>
+					<div class="section-body">
+						<div class="wrap">
+							<p>Phasellus id <strong>auctor</strong> odio. Curabitur facilisis faucibus magna eget mattis. Quisque imperdiet ante ut erat mattis <strong>consectetur.</strong></p>
+							<p>Ut rhoncus nisl id diam luctus vestibulum. Donec dictum nisl nibh, scelerisque vehicula quam facilisis vel.</p>
+							<p><a href="#" class="button">Download</a></p>
+						</div>
+					</div>
+					<footer class="section-footer">
+						<p>This is just a little note to show you what the </br> chapter slide will look like.</p>
+					</footer>
+				</div>
+			</section>
 
-			    	<div class="slidetext">
-				    	<h1 class="text-center">Lorem ipsum dolor sit amet, alterum urbanitas ad cum, utamur ancillae disputando at vel.</h1>
-				    </div>
-			    	<footer class="text-center text-uppercase">Note: Ut consul quodsi convenire sea, ius populo consectetuer in.</footer>
-			    </div>
+			<section class="section image" id="four">
+				<div class="slide fit">
+					<div class="section-content">
+						<header class="section-title">
+							<h2>chapter</h2>
+						</header>
+						<div class="section-body">
+							<div class="wrap">
+								<div class="imgcontainer-flex">
+									<!-- <img src="img/palm.jpg"> -->
+									<img src="http://placehold.it/800x1200">
+								</div>
+							</div>
+						</div>
+						<footer class="section-footer">
+							<p>This is just a little note to show you what the </br> chapter slide will look like.</p>
+						</footer>
+					</div>
+				</div>
+				<div class="slide fill">
+					<div class="section-bg">
+						<img src="img/chica.jpg">
+					</div>
 
-		    </div>
+					<div class="section-content">
+						<header class="section-title">
+							<h2>chapter</h2>
+						</header>
+						<footer class="section-footer">
+							<p>This is just a little note to show you what the </br> chapter slide will look like.</p>
+						</footer>
+					</div>
+				</div>
+				<div class="slide fit">
+					<div class="section-content">
+						<header class="section-title">
+							<h2>chapter</h2>
+						</header>
+						<div class="section-body">
+							<div class="wrap">
+								<div class="imgcontainer-flex">
+									<img src="http://placehold.it/1400x700">
+								</div>
+							</div>
+						</div>
+						<footer class="section-footer">
+							<p>This is just a little note to show you what the </br> chapter slide will look like.</p>
+						</footer>
+					</div>
+				</div>
+				<div class="slide fill">
+					<div class="section-bg">
+						<img src="img/chica.jpg">
+					</div>
 
-		    <div class="section" id="section3">
-		    	Section 4
-				<div class="slide"> Slide 1 </div>
-				<div class="slide"> Slide 2 </div>
-				<div class="slide"> Slide 3 </div>
-				<div class="slide"> Slide 4 </div>
-			</div>
+					<div class="section-content">
+						<header class="section-title">
+							<h2>chapter</h2>
+						</header>
+						<footer class="section-footer">
+							<p>This is just a little note to show you what the </br> chapter slide will look like.</p>
+						</footer>
+					</div>
+				</div>
+			</section>
+			<section class="section grid" id="five">
+				<div class="section-content">
+					<header class="section-title">
+						<h2>chapter</h2>
+					</header>
+					<div class="gridcontainer">
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/400x300"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/300x500"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/800x300"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/300x600"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/400x200"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/350x400"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/400x360"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/300x700"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/800x500"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/300x700"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/500x300"/>
+						</div>
+					  	<div class="gridcell">
+						    <img src="http://placehold.it/300x400"/>
+						</div>		
+				  	</div>
+				</div>
+			</section>
+
 		</div>
 
-
 		
+
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
 		<!--(if target dev)><!-->
-		<script>window.jQuery || document.write('<script src="scripts/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-		<script src="scripts/plugins.js"></script>
-		<script src="scripts/main.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
 		<!--<!(endif)-->
 
 		<!--(if target dist)><!-->
-		<!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
 		<!-- <script src="js/scripts.min.js"></script> -->
 		<!--<!(endif)-->
 	</body>
