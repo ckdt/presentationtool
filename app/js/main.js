@@ -42,11 +42,25 @@ $(document).ready(function() {
         navigationTooltips: ['first', 'second', 'third', 'fourth', 'fifth'],
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
-        
         verticalCentered: false,
-        afterRender: function(index, nextIndex, direction){
-            $('video').get(0).pause();
-            console.log(index, nextIndex, direction);
+
+        onLeave: function(index, nextIndex, direction){
+        	var current = $(this);
+        	if(current.hasClass('video')){
+        		$(current).find('video').get(0).pause();
+        	}
+        },
+        afterLoad: function(anchorLink, index){
+        	var current = $(this);
+        	if(current.hasClass('video')){
+        		$(current).find('video').get(0).play();
+        	}
+        },
+        afterRender: function(){},
+        afterResize: function(){},
+        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+        },
+        onSlideLeave: function(anchorLink, index, slideIndex, direction){
         }
     });
 

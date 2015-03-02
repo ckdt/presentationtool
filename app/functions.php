@@ -18,10 +18,31 @@ function business_theme_setup() {
 add_action( 'after_setup_theme', 'business_theme_setup' );
 
 function business_theme_scripts(){
-	wp_enqueue_style( 'business-style', get_template_directory_uri() . '/css/jquery.fullPage.css', array(), '2.5.7' );
-	wp_enqueue_script( 'fullpage-script', get_template_directory_uri() . '/js/jquery.fullPage.min.js', array( 'jquery' ), '2.5.7');
+
+	if ( !is_admin() ) {
+		wp_enqueue_style('business_style', get_template_directory_uri() . '/css/theme.min.css', false, null);
+
+		wp_deregister_script( 'jquery' );
+		wp_register_script( 'jquery', "http" . ( $_SERVER['SERVER_PORT'] == 443 ? "s" : "" ) . "://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js", array(), false, true );
+		wp_register_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.8.3.min.js' );
+		
+		wp_register_script( 'main', get_template_directory_uri() . '/js/scripts.min.js', array( 'jquery' ), false, true );
+		wp_enqueue_script( 'modernizr' );
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'main' );
+
+		wp_localize_script('main', 'WPDATA', array('ajaxurl' => admin_url('admin-ajax.php')));
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'business_theme_scripts' );
+
+function business_theme_admin_scripts() {
+    wp_register_style( 'add-admin-stylesheet', get_template_directory_uri().'/css/admin.theme.css');
+    wp_enqueue_style( 'add-admin-stylesheet' );
+}
+
+add_action( 'admin_enqueue_scripts', 'business_theme_admin_scripts' );
 
 
 function business_register_customposts() {
@@ -104,3 +125,21 @@ function business_customm_afc_toolbars( $toolbars ){
 	return $toolbars;
 }
 add_filter( 'acf/fields/wysiwyg/toolbars' , 'business_customm_afc_toolbars'  );
+
+function my_password_form() {
+    global $post;
+    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+    $o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
+    ' . __( "To view this protected post, enter the password below:" ) . '
+    <label for="' . $label . '">' . __( "Password:" ) . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><input type="submit" name="Submit" value="' . esc_attr__( "Submit" ) . '" />
+    </form>
+    ';
+    return $o;
+}
+add_filter( 'the_password_form', 'my_password_form' );
+
+
+
+
+
+
