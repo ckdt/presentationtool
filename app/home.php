@@ -13,8 +13,6 @@ $args = array(
 	'posts_per_page' => -1
 );
 $pres = get_posts( $args );
-
-print_r($pres);
 ?>
 <?php if( $pres ) : ?>
 <?php foreach( $pres as $post ) : setup_postdata( $post ); ?>

@@ -28,6 +28,9 @@ get_header(); ?>
 			<?php if ( get_row_layout() == 'default' ): // layout: Default ?>
 				<?php get_template_part( 'templates/slide', 'relation' ); ?>
 			<?php endif; ?>
+			<?php if ( get_row_layout() == 'image_grid' ): // layout: Image Grid ?>
+				<?php get_template_part( 'templates/slide', 'grid' ); ?>
+			<?php endif; ?>
 		<?php endwhile; ?>
 
 	<?php else: ?>
