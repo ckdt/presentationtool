@@ -31,51 +31,11 @@ get_header(); ?>
 		<?php endwhile; ?>
 
 	<?php else: ?>
-<<<<<<< HEAD
-
-		<section class="section password">
-			<div class="section-content">
-				<header class="section-title">
-					<h2>notice</h2>
-				</header>
-				<div class="section-body">
-					<div class="wrap">
-						<h1><?php echo get_the_password_form(); ?></h1>
-					</div>
-				</div>
-				<footer class="section-footer">
-					<p>Please enter your password</p>
-				</footer>
-			</div>
-		</section>
-
-	<?php endif;?>
-
-<?php else: ?>
-
-<section class="section notice">
-	<div class="section-content">
-		<header class="section-title">
-			<h2>notice</h2>
-		</header>
-		<div class="section-body">
-			<div class="wrap">
-				<h1>This presentation doesn't have any slides yet</h1>
-			</div>
-		</div>
-		<footer class="section-footer">
-			<p>Please login and add some slides</p>
-		</footer>
-	</div>
-</section>
-
-=======
 		<?php get_template_part( 'templates/slide', 'password' ); ?>
 	<?php endif;?>
 
 <?php else: ?>
 	<?php get_template_part( 'templates/slide', '404' ); ?>
->>>>>>> eb060c1d8469e6189dac9afe037cb99f985ae838
 <?php endif; ?>
 
 </div>

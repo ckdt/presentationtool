@@ -19,11 +19,6 @@ print_r($pres);
 <?php if( $pres ) : ?>
 <?php foreach( $pres as $post ) : setup_postdata( $post ); ?>
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> eb060c1d8469e6189dac9afe037cb99f985ae838
 		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 	<?php endforeach; ?>
