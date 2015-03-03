@@ -1490,10 +1490,11 @@ strong {
 }
 .section .section-body h1 {
   font-family: 'NeuzeitGroteskBold', sans-serif;
-  font-size: 72px;
+  font-size: 42px;
   letter-spacing: -2px;
-  line-height: 82px;
+  line-height: 50px;
   font-weight: normal;
+  margin: 0 80px;
 }
 .section .section-footer p {
   font-family: 'ApercuRegular', sans-serif;
@@ -1617,7 +1618,6 @@ strong {
   margin: 0 auto;
 }
 .section.grid .gridcell {
-  background-color: blue;
   float: left;
   overflow: hidden;
   text-align: center;
@@ -1653,4 +1653,34 @@ strong {
   background-color: transparent;
   background-image: url('../img/bluegreenhouse.jpg');
   background-repeat: no-repeat;
+}
+/* ############### RESPONSIVE THEME STYLES ############### */
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .section .section-title h2 {
+    font-size: 20px;
+  }
+  .section .section-body h1 {
+    font-family: 'NeuzeitGroteskBold', sans-serif;
+    font-size: 62px;
+    letter-spacing: -2px;
+    line-height: 74px;
+    font-weight: normal;
+    margin: 0 80px;
+  }
+}
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .section .section-title h2 {
+    font-size: 20px;
+  }
+  .section .section-body h1 {
+    font-family: 'NeuzeitGroteskBold', sans-serif;
+    font-size: 72px;
+    letter-spacing: -2px;
+    line-height: 82px;
+    font-weight: normal;
+    margin: 0 80px;
+  }
 }
