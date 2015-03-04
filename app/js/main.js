@@ -43,6 +43,7 @@ $(document).ready(function() {
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
         verticalCentered: false,
+        responsive: 321,		// Below 321px, the site will scroll normally
 
         onLeave: function(index, nextIndex, direction){
         	var current = $(this);
@@ -115,15 +116,12 @@ $(document).ready(function() {
 		if (width > 1024) {
 			wPerc = 0.951;
 			hPerc = 0.8;
-			console.log(' > 1024');
 		} else if (768 <= width <= 1024) {
 			wPerc = 0.902;
 			hPerc = 0.65;
-			console.log('between');
 		} else if (width < 768) {
 			wPerc = 0.938;
 			hPerc = 1;
-			console.log('else');
 		}
 
 		setGridContainerWidth(Math.floor(width * wPerc));

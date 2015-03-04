@@ -1423,6 +1423,9 @@ body {
 #fp-nav ul li .fp-tooltip.left {
   left: 20px;
 }
+#fp-nav.right {
+  right: 30px;
+}
 /* ############### / FULLPAGE JS ############### */
 /* ############### THEME STYLES ############### */
 @font-face {
@@ -1494,7 +1497,10 @@ strong {
   letter-spacing: -2px;
   line-height: 50px;
   font-weight: normal;
-  margin: 0 80px;
+  margin: 0 40px;
+}
+.section .section-footer {
+  padding: 0 30px;
 }
 .section .section-footer p {
   font-family: 'ApercuRegular', sans-serif;
@@ -1519,10 +1525,13 @@ strong {
   margin: 0 auto 58px auto;
   max-width: 960px;
   font-family: 'NeuzeitGroteskBold', sans-serif;
-  font-size: 48px;
+  font-size: 28px;
   letter-spacing: -1px;
-  line-height: 58px;
+  line-height: 34px;
   font-weight: normal;
+}
+.section.text .section-content .section-body .wrap {
+  padding: 0 30px;
 }
 .section.text .section-content .section-footer p {
   color: #ADADAD;
@@ -1667,6 +1676,28 @@ strong {
     line-height: 74px;
     font-weight: normal;
     margin: 0 80px;
+  }
+  .section.text {
+    padding: 30px;
+  }
+  .section.text .section-content {
+    background: #fff;
+    color: #141414;
+  }
+  .section.text .section-content .section-title h2 {
+    color: #ADADAD;
+  }
+  .section.text .section-content .section-body p {
+    margin: 0 auto 58px auto;
+    max-width: 960px;
+    font-family: 'NeuzeitGroteskBold', sans-serif;
+    font-size: 48px;
+    letter-spacing: -1px;
+    line-height: 58px;
+    font-weight: normal;
+  }
+  .section.text .section-content .section-footer p {
+    color: #ADADAD;
   }
 }
 /* Small devices (tablets, 768px and up) */
