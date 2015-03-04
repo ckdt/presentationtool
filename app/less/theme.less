@@ -55,8 +55,14 @@
 
 
 /* ############### FULLPAGE JS ############### */
-// fullPageJS
 @import "../lib/fullPage.js-master/less/jquery.fullPage.less";
+
+#fp-nav.right {
+	right: 30px;
+}
+
+
+
 /* ############### / FULLPAGE JS ############### */
 
 
@@ -145,14 +151,16 @@ strong{
 
 		h1{
 			font-family: 'NeuzeitGroteskBold',sans-serif;
-			font-size: 72px;
+			font-size: 42px;
 			letter-spacing: -2px;
-			line-height: 82px;
+			line-height: 50px;
 			font-weight: normal;
+			margin:0 40px;
 		}
 	}
 
 	.section-footer{
+		padding:0 30px;
 		p{
 			font-family: 'ApercuRegular',sans-serif;
 			font-size: 18px;
@@ -175,14 +183,19 @@ strong{
 			.section-title h2{
 				color: #ADADAD;
 			}
-			.section-body p{
-				margin:0 auto 58px auto;
-				max-width: 960px;
-				font-family: 'NeuzeitGroteskBold',sans-serif;
-				font-size: 48px;
-				letter-spacing: -1px;
-				line-height: 58px;
-				font-weight: normal;
+			.section-body{
+				p{
+					margin:0 auto 58px auto;
+					max-width: 960px;
+					font-family: 'NeuzeitGroteskBold',sans-serif;
+					font-size: 28px;
+					letter-spacing: -1px;
+					line-height: 34px;
+					font-weight: normal;
+				}
+				.wrap{
+					padding:0 30px;
+				}
 			}
 			.section-footer p{
 				color: #ADADAD;
@@ -288,7 +301,6 @@ strong{
 			margin:0 auto;
 		}
 		.gridcell{
-			background-color: blue;
 			float: left;
 			overflow:hidden;
 			text-align: center;
@@ -329,3 +341,7 @@ html, body{
 	background-image: url('../img/bluegreenhouse.jpg');
 	background-repeat: no-repeat;
 }
+
+/* ############### RESPONSIVE THEME STYLES ############### */
+@import "tablet_and_up.less";
+@import "medium_and_up.less";
