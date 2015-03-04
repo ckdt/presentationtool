@@ -1,4 +1,4 @@
-<section class="section notice">
+<section class="section notice" id="notice-<?php echo $GLOBALS['x']; ?>">
 	<div class="section-content">
 		<header class="section-title">
 			<h2>notice</h2>

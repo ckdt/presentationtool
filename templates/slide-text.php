@@ -5,7 +5,7 @@
 	$button = get_sub_field( 'text_button' );
 	$background  = get_sub_field( 'text_background' );
 ?>
-<section class="section text" id="three" style="background-image: url(<?php echo $background["sizes"]["large"]; ?>)">
+<section class="section text" id="text-<?php echo $GLOBALS['x']; ?>" style="background-image: url(<?php echo $background["sizes"]["large"]; ?>)">
 	<div class="section-content">
 		<?php if(isset($title) && $title != "" ): ?>
 		

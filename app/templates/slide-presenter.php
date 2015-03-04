@@ -1,4 +1,4 @@
-<section class="section image" id="four">
+<section class="section image" id="image-<?php echo $GLOBALS['x']; ?>">
 
 <?php if ( $items = get_sub_field( 'presenter_item' ) ): ?>
 	<?php while ( has_sub_field( 'presenter_item' ) ): ?>

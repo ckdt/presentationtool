@@ -4,7 +4,7 @@
 	$note = get_sub_field( 'chapter_note' );
 	$background  = get_sub_field( 'chapter_background' );
 ?>
-<section class="section chapter" id="one" style="background-image: url(<?php echo $background["sizes"]["large"]; ?>)">
+<section class="section chapter" id="chapter-<?php echo $GLOBALS['x']; ?>" style="background-image: url(<?php echo $background["sizes"]["large"]; ?>)">
 	<div class="section-content">
 
 		<?php if(isset($title) && $title != "" ): ?>

@@ -1,12 +1,16 @@
 <?php
+	$title = get_sub_field( 'images_title' );
 	$images = get_sub_field( 'images' );
-
 ?>
-<section class="section grid" id="five">
+<section class="section grid" id="grid-<?php echo $GLOBALS['x']; ?>">
 	<div class="section-content">
+		<?php if(isset($title) && $title != "" ): ?>
+		
 		<header class="section-title">
-			<h2>chapter</h2>
+			<h2><?php echo $title; ?></h2>
 		</header>
+		
+		<?php endif; ?>
 
 <?php if($images): ?>
 		<div class="gridcontainer">	
