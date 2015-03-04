@@ -1,4 +1,4 @@
-<section class="section password">
+<section class="section password" id="password-<?php echo $GLOBALS['x']; ?>">
 	<div class="section-content">
 		<header class="section-title">
 			<h2><?php the_title(); ?></h2>

@@ -5,7 +5,7 @@
 	$video = get_sub_field( 'video_url' );
 	$fallback  = get_sub_field( 'video_fallback' );
 ?>
-<section class="section video" id="two" style="background-image: url(<?php echo $fallback["sizes"]["large"]; ?>)">
+<section class="section video" id="video-<?php echo $GLOBALS['x']; ?>" style="background-image: url(<?php echo $fallback["sizes"]["large"]; ?>)">
 	<video loop muted controls="false" id="thevideo">
 		<source src="<?php echo $video; ?>" type="video/mp4">
 		<!-- <source src="video/284081672.webm" type="video/webm"> -->

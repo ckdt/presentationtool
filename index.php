@@ -11,8 +11,13 @@ get_header(); ?>
 <?php if ( $slides = get_field( 'slides' ) ): ?>
 
 	<?php if ( ! post_password_required() ): ?>
-
+		<?php
+			$GLOBALS['x'] = 0;
+		?>
 		<?php while ( has_sub_field( 'slides' ) ): ?>
+			<?php 
+				$GLOBALS['x']++;
+			?>
 			<?php if ( get_row_layout() == 'chapter' ): // layout: Chapter ?>
 				<?php get_template_part( 'templates/slide', 'chapter' ); ?>
 			<?php endif; ?>
