@@ -329,6 +329,88 @@ strong{
 			margin:0 auto;
 		}
 	}
+
+	&.overview{
+		background: #F2F3F6;
+		.section-title h2{
+			color: #ADADAD;
+		}
+		.section-body{
+			.wrap{
+				h1{
+					color:#141414;
+					font-family: 'NeuzeitGroteskBold',sans-serif;
+					font-size: 24px;
+					letter-spacing: -0.25px;
+					line-height: 29px;
+					font-weight: normal;
+					margin:0 0 20px;
+				}
+
+				.itemrow{
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-justify-content: center;
+					-ms-flex-pack: center;
+					justify-content: center;
+					-webkit-flex-flow: row wrap;
+					-ms-flex-flow: row wrap;
+					flex-flow: row wrap;
+					-webkit-align-items: flex-start;
+					-ms-flex-align: start;
+					align-items: flex-start;
+					-webkit-align-content: center;
+					-ms-flex-line-pack: center;
+					align-content: center;
+					.itemcontainer{
+						float: left;
+						width:180px;
+						background-color: lightgrey;
+						margin-top:10px;
+						.circle{
+							background: #fff;
+							width: 150px;
+							height: 150px;
+							-moz-border-radius: 75px;
+							-webkit-border-radius: 75px;
+							border-radius: 75px;
+							margin:0 auto;
+							padding-top: 42px;
+						}
+						img{
+						}
+						.itemtext{
+							h3{
+								margin:10px auto 6px;
+								font-family: 'NeuzeitGroteskBold',sans-serif;
+								font-size: 30px;
+								line-height: 36px;
+								font-weight: normal;
+								color:#1E1FA7;
+							}
+							p{
+								margin:0;
+								font-family: 'ApercuRegular',sans-serif;
+								font-size: 16px;
+								line-height: 24px;
+								font-weight: normal;
+								color:#141414;
+							}			
+						}
+					}	
+					.arrow{
+						float: left;
+						margin:0 0 0 4px;
+						padding-top:62px;
+					}
+				}
+			}
+		}
+		.section-footer p{
+			color: #ADADAD;
+		}
+	}
 }
 
 html, body{
@@ -345,3 +427,4 @@ html, body{
 /* ############### RESPONSIVE THEME STYLES ############### */
 @import "tablet_and_up.less";
 @import "medium_and_up.less";
+@import "large_and_up.less";
