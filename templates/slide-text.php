@@ -8,11 +8,9 @@
 <section class="section text" id="text-<?php echo $GLOBALS['x']; ?>" style="background-image: url(<?php echo $background["sizes"]["large"]; ?>)">
 	<div class="section-content">
 		<?php if(isset($title) && $title != "" ): ?>
-		
 		<header class="section-title">
 			<h2><?php echo $title; ?></h2>
 		</header>
-		
 		<?php endif; ?>
 
 		<?php if(isset($statement) && $statement != "" ): ?>
@@ -28,11 +26,9 @@
 		<?php endif; ?>
 
 		<?php if(isset($note) && $note != "" ): ?>
-
 		<footer class="section-footer">
 			<p><?php echo $note; ?></p>
 		</footer>
-
 		<?php endif; ?>
 	</div>
 </section>
