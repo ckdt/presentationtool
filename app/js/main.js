@@ -37,10 +37,10 @@ $(document).ready(function() {
 	if(!isPhone){ // Only do fullpage if it's not a phone device
 	    $('#fullpage').fullpage({
 	        menu: false,
-	        anchors:['first', 'second', 'third', 'fourth', 'fifth', 'sixth'],
+	        anchors:['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'],
 	        navigation: true,
 	        navigationPosition: 'right',
-	        navigationTooltips: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'],
+	        navigationTooltips: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'],
 	        slidesNavigation: true,
 	        slidesNavPosition: 'bottom',
 	        verticalCentered: false,
