@@ -1691,19 +1691,22 @@ strong {
 }
 .section.overview .section-body .wrap .itemrow .itemcontainer {
   float: left;
-  width: 180px;
-  background-color: lightgrey;
-  margin-top: 10px;
+  width: 100%;
+  margin: 10px 30px 14px;
 }
 .section.overview .section-body .wrap .itemrow .itemcontainer .circle {
   background: #fff;
-  width: 150px;
-  height: 150px;
-  -moz-border-radius: 75px;
-  -webkit-border-radius: 75px;
-  border-radius: 75px;
+  width: 216px;
+  height: 216px;
+  -moz-border-radius: 108px;
+  -webkit-border-radius: 108px;
+  border-radius: 108px;
   margin: 0 auto;
-  padding-top: 42px;
+  padding-top: 67px;
+}
+.section.overview .section-body .wrap .itemrow .itemcontainer .circle img {
+  width: 82px;
+  height: 82px;
 }
 .section.overview .section-body .wrap .itemrow .itemcontainer .itemtext h3 {
   margin: 10px auto 6px;
@@ -1723,8 +1726,13 @@ strong {
 }
 .section.overview .section-body .wrap .itemrow .arrow {
   float: left;
-  margin: 0 0 0 4px;
-  padding-top: 62px;
+  margin: 0;
+  padding-top: 0;
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
 }
 .section.overview .section-footer p {
   color: #ADADAD;
@@ -1784,9 +1792,9 @@ body {
   .section.overview .section-body .wrap h1 {
     color: #141414;
     font-family: 'NeuzeitGroteskBold', sans-serif;
-    font-size: 42px;
-    letter-spacing: -2px;
-    line-height: 50px;
+    font-size: 48px;
+    letter-spacing: -0.5px;
+    line-height: 58px;
     font-weight: normal;
     margin: 0 0 20px;
   }
@@ -1810,7 +1818,20 @@ body {
     align-content: center;
   }
   .section.overview .section-body .wrap .itemrow .itemcontainer {
-    margin-top: 19px;
+    margin: 0 0 12px;
+    width: 180px;
+  }
+  .section.overview .section-body .wrap .itemrow .itemcontainer .circle {
+    width: 150px;
+    height: 150px;
+    -moz-border-radius: 75px;
+    -webkit-border-radius: 75px;
+    border-radius: 75px;
+    padding-top: 42px;
+  }
+  .section.overview .section-body .wrap .itemrow .itemcontainer .circle img {
+    width: 64px;
+    height: 64px;
   }
   .section.overview .section-body .wrap .itemrow .itemcontainer .itemtext h3 {
     margin: 25px auto 0 auto;
@@ -1825,7 +1846,13 @@ body {
     margin: 0;
   }
   .section.overview .section-body .wrap .itemrow .arrow {
-    padding-top: 81px;
+    margin: 0 0 0 4px;
+    padding-top: 62px;
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
   }
 }
 /* Medium devices (desktops, 992px and up) */
@@ -1859,9 +1886,6 @@ body {
   .section.overview .section-body .wrap .itemrow {
     width: 100%;
     margin: 0 auto;
-  }
-  .section.overview .section-body .wrap .itemrow .itemcontainer {
-    margin-top: 19px;
   }
   .section.overview .section-body .wrap .itemrow .itemcontainer .itemtext h3 {
     margin: 25px auto 0 auto;
@@ -1903,9 +1927,6 @@ body {
     line-height: 50px;
     font-weight: normal;
     margin: 0 0 20px;
-  }
-  .section.overview .section-body .wrap .itemrow .itemcontainer {
-    margin-top: 19px;
   }
   .section.overview .section-body .wrap .itemrow .itemcontainer .itemtext h3 {
     margin: 25px auto 0 auto;
