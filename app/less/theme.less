@@ -425,12 +425,15 @@ strong{
 			.wrap{
 				.estimaterow{
 					text-align: left;
+					width:1170px;
+					margin:0 auto;
 
 					.estimatecontainer{
 						float: left;
 						width:360px;
 						height:684px;
 						background-color: #fff;
+						margin:0 15px;
 						.inner{
 							padding: 35px 20px 64px;
 
@@ -442,10 +445,10 @@ strong{
 								-moz-border-radius: 32px;
 								-webkit-border-radius: 32px;
 								border-radius: 32px;
-								padding:12px 20px;
+								text-align: center;
+								padding:12px;
 								
 								h2{
-									float: left;
 									margin:0;
 									font-family: 'NeuzeitGroteskBold',sans-serif;
 									font-size: 43px;
@@ -456,11 +459,10 @@ strong{
 
 							}
 							.estimateheader{
-								float: left;
 								width:320px;
 
 								h4{
-									margin:0;
+									margin:5px 0 0 75px;
 									font-family: 'NeuzeitGroteskBold',sans-serif;
 									font-size: 34px;
 									line-height:41px;
@@ -468,15 +470,16 @@ strong{
 									color:#141414;
 								}
 								h5{
-									margin:0;
+									margin:0 0 0 75px;
 									font-family: 'NeuzeitGroteskBold',sans-serif;
-									font-size: 22px;
+									font-size: 18px;
 									font-weight: normal;
 									color:#1E1FA7;
 								}
 							}
 							
 							.estimatetext{
+								clear: both;
 								h6{
 									margin:30px auto 0;
 									font-family: 'NeuzeitGroteskBold',sans-serif;
@@ -502,23 +505,48 @@ strong{
 					.price{
 						background-color: #1E1FA7;
 						height: 150px;
+						position: relative;
 
-						.before{
-							text-decoration: line-through;
+						.discountperc{
+							position: absolute;
+							top:-100px;
+							right:0;
+							width:100px;
+							height:100px;
+							background-color: #000;
+
+							h4{
+								margin: 29px 0 0 0;
+								font-family: 'NeuzeitGroteskBold',sans-serif;
+								font-size: 36px;
+								font-weight: normal;
+								color:#fff;
+								text-align: center;
+							}
 						}
-						h3{
-							margin:0;
-							font-family: 'NeuzeitGroteskBold',sans-serif;
-							font-size: 52px;
-							line-height:62px;
-							font-weight: normal;
-						}
-						p{
-							margin:10px auto 6px;
-							font-family: 'NeuzeitGroteskBold',sans-serif;
-							font-size: 14px;
-							line-height:24px;
-							font-weight: normal;
+						.innerprice{
+							padding:10px;
+
+							.pricebefore{
+								text-decoration: line-through;
+								text-align: left;
+								margin: 10px 0 0 74px;
+							}
+							h3{
+								margin:0;
+								text-align: center;
+								font-family: 'NeuzeitGroteskBold',sans-serif;
+								font-size: 52px;
+								font-weight: normal;
+							}
+							p{
+								margin:0;
+								text-align: center;
+								font-family: 'NeuzeitGroteskBold',sans-serif;
+								font-size: 14px;
+								line-height:24px;
+								font-weight: normal;
+							}
 						}
 					}	
 				}

@@ -1745,12 +1745,15 @@ strong {
 }
 .section.estimate .section-body .wrap .estimaterow {
   text-align: left;
+  width: 1170px;
+  margin: 0 auto;
 }
 .section.estimate .section-body .wrap .estimaterow .estimatecontainer {
   float: left;
   width: 360px;
   height: 684px;
   background-color: #fff;
+  margin: 0 15px;
 }
 .section.estimate .section-body .wrap .estimaterow .estimatecontainer .inner {
   padding: 35px 20px 64px;
@@ -1763,10 +1766,10 @@ strong {
   -moz-border-radius: 32px;
   -webkit-border-radius: 32px;
   border-radius: 32px;
-  padding: 12px 20px;
+  text-align: center;
+  padding: 12px;
 }
 .section.estimate .section-body .wrap .estimaterow .estimatecontainer .inner .numbercircle h2 {
-  float: left;
   margin: 0;
   font-family: 'NeuzeitGroteskBold', sans-serif;
   font-size: 43px;
@@ -1775,11 +1778,10 @@ strong {
   color: #fff;
 }
 .section.estimate .section-body .wrap .estimaterow .estimatecontainer .inner .estimateheader {
-  float: left;
   width: 320px;
 }
 .section.estimate .section-body .wrap .estimaterow .estimatecontainer .inner .estimateheader h4 {
-  margin: 0;
+  margin: 5px 0 0 75px;
   font-family: 'NeuzeitGroteskBold', sans-serif;
   font-size: 34px;
   line-height: 41px;
@@ -1787,11 +1789,14 @@ strong {
   color: #141414;
 }
 .section.estimate .section-body .wrap .estimaterow .estimatecontainer .inner .estimateheader h5 {
-  margin: 0;
+  margin: 0 0 0 75px;
   font-family: 'NeuzeitGroteskBold', sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: normal;
   color: #1E1FA7;
+}
+.section.estimate .section-body .wrap .estimaterow .estimatecontainer .inner .estimatetext {
+  clear: both;
 }
 .section.estimate .section-body .wrap .estimaterow .estimatecontainer .inner .estimatetext h6 {
   margin: 30px auto 0;
@@ -1815,19 +1820,42 @@ strong {
 .section.estimate .section-body .wrap .estimaterow .price {
   background-color: #1E1FA7;
   height: 150px;
+  position: relative;
 }
-.section.estimate .section-body .wrap .estimaterow .price .before {
+.section.estimate .section-body .wrap .estimaterow .price .discountperc {
+  position: absolute;
+  top: -100px;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+}
+.section.estimate .section-body .wrap .estimaterow .price .discountperc h4 {
+  margin: 29px 0 0 0;
+  font-family: 'NeuzeitGroteskBold', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+}
+.section.estimate .section-body .wrap .estimaterow .price .innerprice {
+  padding: 10px;
+}
+.section.estimate .section-body .wrap .estimaterow .price .innerprice .pricebefore {
   text-decoration: line-through;
+  text-align: left;
+  margin: 10px 0 0 74px;
 }
-.section.estimate .section-body .wrap .estimaterow .price h3 {
+.section.estimate .section-body .wrap .estimaterow .price .innerprice h3 {
   margin: 0;
+  text-align: center;
   font-family: 'NeuzeitGroteskBold', sans-serif;
   font-size: 52px;
-  line-height: 62px;
   font-weight: normal;
 }
-.section.estimate .section-body .wrap .estimaterow .price p {
-  margin: 10px auto 6px;
+.section.estimate .section-body .wrap .estimaterow .price .innerprice p {
+  margin: 0;
+  text-align: center;
   font-family: 'NeuzeitGroteskBold', sans-serif;
   font-size: 14px;
   line-height: 24px;
