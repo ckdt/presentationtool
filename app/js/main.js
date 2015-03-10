@@ -66,6 +66,8 @@ $(document).ready(function() {
 	    });
     }
 
+// ################  Fit slide ####################################
+
 	function setImageRatio(){
 		$('.imgcontainer-flex').each(function(){
 			var imgH = $(this).children('img').height();
@@ -98,6 +100,11 @@ $(document).ready(function() {
 		});
 	}
 
+// ################ End fit slide ##################################
+
+
+// ################ Image grid #####################################
+
 	function setGridImageRatio(){
 		$('.gridcell').each(function(){
 			var imgH = $(this).children('img').height();
@@ -113,6 +120,7 @@ $(document).ready(function() {
 
 		var wPerc; 							// Percentage of width
 		var hPerc; 							// Percentage of height
+		var belowTablet;
 
 		if (width > 1024) {
 			wPerc = 0.951;
@@ -120,13 +128,19 @@ $(document).ready(function() {
 		} else if (768 <= width <= 1024) {
 			wPerc = 0.902;
 			hPerc = 0.65;
-		} else if (width < 768) {
-			wPerc = 0.938;
-			hPerc = 1;
+		}
+		if (width < 767) {
+			wPerc = 1;
+			belowTablet = true;
 		}
 
 		setGridContainerWidth(Math.floor(width * wPerc));
-		setGridContainerHeight(Math.floor(height * hPerc));
+		
+		if (belowTablet) {
+			setGridContainerHeight('auto');		// Make a 1 column lay out
+		}else{
+			setGridContainerHeight(Math.floor(height * hPerc));
+		}
 
 		$('.gridcontainer').css('width', getGridContainerWidth());
 		$('.gridcontainer').css('height', getGridContainerHeight());
@@ -136,7 +150,7 @@ $(document).ready(function() {
 		var topMargin = 10;
 		var sideMargin = 5;
 
-		// Get grid container dims
+		// Get grid container dimensions
 		var contH = getGridContainerHeight();
 		var contW = getGridContainerWidth();
 
@@ -144,6 +158,11 @@ $(document).ready(function() {
 		var heightCellPerc;
 		var horGutterCount;
 		var vertGutterCount;
+
+		var belowTablet;
+		var cellHeight;
+		var cellWidth;
+
 
 		// Determine 4 or 3 column lay-out
 		var width = $(window).width();
@@ -153,16 +172,25 @@ $(document).ready(function() {
 			heightCellPerc = 0.3333333;
 			horGutterCount = 8;
 			vertGutterCount = 3;
-		} else if (width <= 1024){
+		} else if (768 <= width <= 1024){
 			widthCellPerc = 0.33333333;
 			heightCellPerc = 0.25;
 			horGutterCount = 6;
 			vertGutterCount = 4;
 		}
+		if(width < 768){
+			belowTablet = true;
+			sideMargin = 0;
+		}
 
 		// Calculate gridcell div dimensions
-		var cellHeight = Math.floor( (contH - (vertGutterCount * topMargin) ) * heightCellPerc ); // compensate for margin
-	 	var cellWidth = Math.floor( (contW - (horGutterCount * sideMargin) ) * widthCellPerc ); // same here
+		if(belowTablet){
+			cellHeight = 'auto';	// Make a 1 column lay out
+			cellWidth = '100%';
+		}else{
+			cellHeight = Math.floor( (contH - (vertGutterCount * topMargin) ) * heightCellPerc ); // compensate for margin
+			cellWidth = Math.floor( (contW - (horGutterCount * sideMargin) ) * widthCellPerc ); // same here
+		}
 
 		$('.gridcell').css('height', cellHeight);
 		$('.gridcell').css('width', cellWidth);
@@ -170,25 +198,35 @@ $(document).ready(function() {
 
 
 		// Fit the images in the gridcells
-		$('.gridcell').each(function(){
-			$(this).removeClass('portrait verticalalign landscape');
+		if(!belowTablet){
+			$('.gridcell').each(function(){
+				$(this).removeClass('portrait verticalalign landscape fullwidth');
 
-			var el = $(this);
-			var refH = el.height();
-			var refW = el.width();
-			var refRatio = refW/refH;
+				var el = $(this);
+				var refH = el.height();
+				var refW = el.width();
+				var refRatio = refW/refH;
 
-			if ( $(this).attr('data-ratio') < refRatio ) { 
-			    $(this).addClass('portrait');
-			} else {
-			    $(this).addClass('verticalalign landscape');
-			}
-		});
+				if ( $(this).attr('data-ratio') < refRatio ) { 
+				    $(this).addClass('portrait');
+				} else {
+				    $(this).addClass('verticalalign landscape');
+				}
+			});
+		} else{
+			$('.gridcell').each(function(){
+				$(this).removeClass('portrait verticalalign landscape');
+				$(this).addClass('fullwidth');
+			});
+		}
 	}
+// ################ End of image grid ###############################
+
 
 	$('body').imagesLoaded( function() {
 		setImageRatio();
 		fitImageToContainer();
+
 		setGridImageRatio();
 		setGridContainerDims();
 		fitGridImageToContainer();
@@ -196,6 +234,7 @@ $(document).ready(function() {
 	
 	$(window).smartresize(function(){
 		fitImageToContainer();
+
 		setGridContainerDims();
 		fitGridImageToContainer();
 	});

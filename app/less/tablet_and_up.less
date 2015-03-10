@@ -52,6 +52,42 @@
 			}
 		}
 
+		&.grid{
+			background-color: #000;
+			.gridcontainer{
+				margin:0 auto;
+				padding:0;
+			}
+			.gridcell{
+				float: left;
+				overflow:hidden;
+				text-align: center;
+				font: 0/0 a;
+			}
+			.gridcell:before {
+			    content: ' ';
+			    display: inline-block;
+			    vertical-align: middle;
+			    height: 100%;
+			}
+			.gridcell img{
+				display: inline-block;
+			}
+			.verticalalign img{
+				display:inline-block;
+				vertical-align:middle;
+				background-color: green;
+			    font: 16px/1 Arial sans-serif;
+			}
+			.landscape img{
+				width:100%;
+			}
+			.portrait img{
+				height:100%;
+				margin:0 auto;
+			}
+		}
+
 		&.overview{
 			background: #F2F3F6;
 			.section-title h2{
