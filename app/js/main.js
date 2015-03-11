@@ -81,7 +81,13 @@ $(document).ready(function() {
 		// Get window height and width and set container height and width
 		var winH = $(window).height();
 		var winW = $(window).width();
-		$('.imgcontainer-flex').css('height', winH * 0.8);
+
+		if(isPhone){
+			$('.imgcontainer-flex').css('height', 'auto');
+		}else{
+			$('.imgcontainer-flex').css('height', winH * 0.8);
+		}
+		
 		$('.imgcontainer-flex').css('width', winW * 0.9);
 
 		$('.imgcontainer-flex').each(function(){
@@ -147,7 +153,7 @@ $(document).ready(function() {
 	}
 
 	function fitGridImageToContainer(){
-		var topMargin = 10;
+		var bottomMargin = 10;
 		var sideMargin = 5;
 
 		// Get grid container dimensions
@@ -188,13 +194,13 @@ $(document).ready(function() {
 			cellHeight = 'auto';	// Make a 1 column lay out
 			cellWidth = '100%';
 		}else{
-			cellHeight = Math.floor( (contH - (vertGutterCount * topMargin) ) * heightCellPerc ); // compensate for margin
+			cellHeight = Math.floor( (contH - (vertGutterCount * bottomMargin) ) * heightCellPerc ); // compensate for margin
 			cellWidth = Math.floor( (contW - (horGutterCount * sideMargin) ) * widthCellPerc ); // same here
 		}
 
 		$('.gridcell').css('height', cellHeight);
 		$('.gridcell').css('width', cellWidth);
-		$('.gridcell').css('margin-top', topMargin).css('margin-left', sideMargin).css('margin-right',sideMargin);
+		$('.gridcell').css('margin-bottom', bottomMargin).css('margin-left', sideMargin).css('margin-right',sideMargin);
 
 
 		// Fit the images in the gridcells
