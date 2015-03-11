@@ -152,6 +152,36 @@ function cc_mime_types( $mimes ){
 }
 add_filter( 'upload_mimes', 'cc_mime_types' );
 
+// CREATE UNIQUE IDS for slides
+$slide_id = 0;
+$slide_prefix = 'slide-';
+$anchor_prefix = 's-';
+$slide_anchors = array();
+
+function set_slide_id($uid){
+	global $slide_id;
+	$slide_id = $uid;
+}
+function get_slide_id(){
+	global $slide_id;
+	return $slide_id;
+}
+function the_slide_anchors(){
+	global $slide_anchors;
+	$json = json_encode($slide_anchors);
+	echo '<script type="text/javascript"> var anchies='.$json.'; </script>';
+}
+function the_slide_id(){
+	global $slide_prefix, $anchor_prefix, $slide_anchors;
+	$current = (int) get_slide_id();
+	$next = $current +1;
+	set_slide_id($next);
+	$anchor = $anchor_prefix.$next;
+	$slide = $slide_prefix.$next;
+	array_push($slide_anchors,$anchor);
+	echo $slide;
+}
+
 // CUSTOM FIELDS
 
 

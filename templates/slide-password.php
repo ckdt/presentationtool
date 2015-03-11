@@ -1,4 +1,4 @@
-<section class="section password" id="password-<?php echo $GLOBALS['x']; ?>">
+<section class="section password" id="<?php the_slide_id(); ?>">
 	<div class="section-content">
 		<header class="section-title">
 			<h2><?php the_title(); ?></h2>

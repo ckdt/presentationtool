@@ -35,12 +35,19 @@ $(document).ready(function() {
 
 	//Fullpage JS
 	if(!isPhone){ // Only do fullpage if it's not a phone device
+		//  anchors: $('.anchor-hack').attr('data-anchors'),
+
+		if(!anchies){
+			var anchies = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'];
+		}else{
+			console.log(anchies);
+		}
+
 	    $('#fullpage').fullpage({
 	        menu: false,
-	        anchors:['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'],
 	        navigation: true,
+	        anchors: anchies,
 	        navigationPosition: 'right',
-	        navigationTooltips: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'],
 	        slidesNavigation: true,
 	        slidesNavPosition: 'bottom',
 	        verticalCentered: false,
