@@ -51,6 +51,55 @@
 				}
 			}
 		}
+		&.image{
+			.fit{
+			}
+
+			.fill{
+				.section-bg{
+					top:0;
+				}
+				.section-title{
+					margin-bottom: 66.5%;
+				}
+			}
+		}
+
+		&.grid{
+			background-color: #000;
+			.gridcontainer{
+				margin:0 auto;
+				padding:0;
+			}
+			.gridcell{
+				float: left;
+				overflow:hidden;
+				text-align: center;
+				font: 0/0 a;
+			}
+			.gridcell:before {
+			    content: ' ';
+			    display: inline-block;
+			    vertical-align: middle;
+			    height: 100%;
+			}
+			.gridcell img{
+				display: inline-block;
+			}
+			.verticalalign img{
+				display:inline-block;
+				vertical-align:middle;
+				background-color: green;
+			    font: 16px/1 Arial sans-serif;
+			}
+			.landscape img{
+				width:100%;
+			}
+			.portrait img{
+				height:100%;
+				margin:0 auto;
+			}
+		}
 
 		&.overview{
 			background: #F2F3F6;
@@ -130,6 +179,126 @@
 						}
 					}
 				}
+			}
+		}
+		&.estimate{
+			background: #F2F3F6;
+			.section-title h2{
+				color: #ADADAD;
+			}
+			.section-body{
+				.wrap{
+					.estimaterow{
+						text-align: left;
+						width:100%;
+
+						.estimatecontainer{
+							background-color: #fff;
+							margin:20px 30px 0;
+							position: relative;
+							.inner{
+								padding: 35px 20px 64px;
+								float: left;
+
+								.numbercircle{
+									float: left;
+									background: #1E1FA7;
+									width: 64px;
+									height: 64px;
+									-moz-border-radius: 32px;
+									-webkit-border-radius: 32px;
+									border-radius: 32px;
+									text-align: center;
+									padding:16px;
+									
+									h2{
+										margin:0;
+										font-size: 37px;
+										line-height:46px;
+									}
+
+								}
+								.estimateheader{
+									h4{
+										margin:5px 0 0 75px;
+										font-size: 30px;
+										line-height:36px;
+									}
+									h5{
+										margin:0 0 0 75px;
+										font-size: 14px;
+										color:#1E1FA7;
+									}
+								}
+								
+								.estimatetext{
+									clear: both;
+									h6{
+										margin:30px auto 0;
+										font-size: 18px;
+										line-height:22px;
+									}
+									p{
+										margin:16px 0 0;
+										font-size: 14px;
+										line-height: 24px;
+									}	
+									.inclusive{
+										color:#1E1FA7;
+									}		
+								}
+							}
+						}
+						.price{
+							background-color: #1E1FA7;
+							width:250px;
+							height: 100px;
+							position: absolute;
+							bottom:0;
+							right:0;
+
+							.discountperc{
+								position: absolute;
+								top:-60px;
+								right:0;
+								width:60px;
+								height:60px;
+								background-color: #000;
+
+								h4{
+									margin: 16px 0 0 0;
+									font-family: 'NeuzeitGroteskBold',sans-serif;
+									font-size: 24px;
+									font-weight: bold;
+									color:#fff;
+									text-align: center;
+								}
+							}
+							.innerprice{
+								padding:8px 16px;
+
+								.pricebefore{
+									margin: 4px 0 0 0;
+								}
+								h3{
+									font-size: 42px;
+									font-weight: bold;
+									line-height: 56px;
+									text-align: left;
+								}
+								p{
+									font-size: 12px;
+									line-height:12px;
+									font-weight: normal;
+									text-align: left;
+								}
+							}
+						}	
+					}
+				}
+			}
+			.section-footer p{
+				color: #ADADAD;
 			}
 		}
 	}
