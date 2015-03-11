@@ -1,11 +1,10 @@
 <?php
-	$title = get_sub_field( 'overview_title' );
-	$name = get_sub_field( 'overview_name' );
-	$note = get_sub_field( 'overview_note' );
-	$connected = get_sub_field( 'overview_items_connected' );
-	$items = get_sub_field( 'overview_items' );
+	$title = get_sub_field( 'estimate_title' );
+	$items = get_sub_field( 'estimate_items' );
+	$note = get_sub_field( 'estimate_note' );
+
 ?>
-<section class="section overview" id="overview-<?php echo $GLOBALS['x']; ?>">
+<section class="section estimate" id="estimate-<?php echo $GLOBALS['x']; ?>">
 	<div class="section-content">
 		<?php if(isset($title) && $title != "" ): ?>
 		<header class="section-title">
@@ -28,7 +27,17 @@
 
 				<?php foreach($items as $item): ?>
 
-					<div class="itemcontainer">
+					<pre>
+						<?php print_r($item); ?>
+					</pre>
+
+					<?php
+						$price = $item["item_price"];
+						$discount = $item["item_discount"];
+						$new_price = $price - ($price * ($discount / 100));
+						echo $new_price;
+					?>
+					<!--<div class="itemcontainer">
 						<div class="circle">
 							<img src="<?php echo $item["item_icon"]["url"]; ?>" width="64" height="64"/>
 						</div>
@@ -44,7 +53,7 @@
 							<img src="<?php echo get_template_directory_uri(); ?>/img/chevron_right.svg" width="16" height="26" />
 							<?php endif; ?>
 						</div>
-					<?php endif; ?>
+					<?php endif; ?>-->
 
 				<?php 
 					$num++;

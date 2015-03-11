@@ -39,6 +39,9 @@ get_header(); ?>
 			<?php if ( get_row_layout() == 'overview' ): // layout: Overview ?>
 				<?php get_template_part( 'templates/slide', 'overview' ); ?>
 			<?php endif; ?>
+			<?php if ( get_row_layout() == 'estimate' ): // layout: Estimate ?>
+				<?php get_template_part( 'templates/slide', 'estimate' ); ?>
+			<?php endif; ?>
 		<?php endwhile; ?>
 
 	<?php else: ?>
