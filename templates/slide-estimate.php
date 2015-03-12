@@ -2,68 +2,76 @@
 	$title = get_sub_field( 'estimate_title' );
 	$items = get_sub_field( 'estimate_items' );
 	$note = get_sub_field( 'estimate_note' );
-
 ?>
-<section class="section estimate" id="estimate-<?php echo $GLOBALS['x']; ?>">
+<section class="section estimate" id="<?php the_slide_id(); ?>">
 	<div class="section-content">
 		<?php if(isset($title) && $title != "" ): ?>
 		<header class="section-title">
 			<h2><?php echo $title; ?></h2>
 		</header>
 		<?php endif; ?>
+
+		<?php if($items): 
+			$n = 0;
+		?>
 		<div class="section-body">
 			<div class="wrap">
-				<?php if(isset($name) && $name != "" ): ?>
-					<h1><?php echo $name; ?></h1>
-				<?php endif; ?>
-
-				<?php 
-
-				if($items): 
-				$len = count($items);
-				$num = 0;
-				?>
-				<div class="itemrow">
-
-				<?php foreach($items as $item): ?>
-
-					<pre>
-						<?php print_r($item); ?>
-					</pre>
+				<div class="estimaterow">
 
 					<?php
-						$price = $item["item_price"];
-						$discount = $item["item_discount"];
-						$new_price = $price - ($price * ($discount / 100));
-						echo $new_price;
+					foreach($items as $item): 
+						$n++;
 					?>
-					<!--<div class="itemcontainer">
-						<div class="circle">
-							<img src="<?php echo $item["item_icon"]["url"]; ?>" width="64" height="64"/>
+					<div class="estimatecontainer">
+						<div class="inner">
+							<div class="estimateheader">
+								<div class="numbercircle">
+									<h2><?php echo $n; ?></h2>
+								</div>
+								<h4><?php echo $item["item_title"]; ?></h4>
+								<H5><?php echo $item["item_subtitle"]; ?></h5>
+							</div>
+							<div class="estimatetext">
+								<?php echo $item["item_description"]; ?>
+							</div>
 						</div>
-						<div class="itemtext">
-							<h3><?php echo $item["item_caption"]; ?></h3>
-							<?php echo $item["item_description"]; ?>
+						<div class="price">
+							<?php if($item["item_discount"]): ?>
+							<div class="discountperc">
+								<h4><?php echo '- '.$item["item_discount"].'%'; ?></h4>
+							</div>
+							<?php endif; ?>
+							<div class="innerprice">
+								<?php
+									$price = $item["item_price"];
+									$discount = $item["item_discount"];
+									if($discount){
+										$new_price = $price - ($price * ($discount / 100));
+									}else{
+										$new_price = $price;
+									}
+									$price = number_format((float)$price, 2, ',', '');
+									$new_price = number_format((float)$new_price, 2, ',', '');
+								?>
+								<?php if($discount):?>
+								<p class="pricebefore"><?php echo '&euro;'.$price; ?></p>
+								<?php endif; ?>
+
+								<?php if($price):?>
+								<h3><?php echo '&euro;'.$new_price; ?></h3>
+								<p>EX BTW</p>
+								<?php endif; ?>
+							</div>
 						</div>
 					</div>
-
-					<?php if($num < $len-1): ?>
-						<div class="arrow">
-							<?php if($connected) : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/img/chevron_right.svg" width="16" height="26" />
-							<?php endif; ?>
-						</div>
-					<?php endif; ?>-->
-
-				<?php 
-					$num++;
-					endforeach; 
-				?>
-
+					<?php 
+						endforeach; 
+					?>
 				</div>
-				<?php endif; ?>
 			</div>
 		</div>
+		<?php endif; ?>
+
 		<?php if(isset($note) && $note != "" ): ?>
 		<footer class="section-footer">
 			<p><?php echo $note; ?></p>
