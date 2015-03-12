@@ -2,7 +2,7 @@
 	$title = get_sub_field( 'images_title' );
 	$images = get_sub_field( 'images' );
 ?>
-<section class="section grid" id="grid-<?php echo $GLOBALS['x']; ?>">
+<section class="section grid" id="<?php the_slide_id(); ?>">
 	<div class="section-content">
 		<?php if(isset($title) && $title != "" ): ?>
 		

@@ -5,7 +5,7 @@
 	$connected = get_sub_field( 'overview_items_connected' );
 	$items = get_sub_field( 'overview_items' );
 ?>
-<section class="section overview" id="overview-<?php echo $GLOBALS['x']; ?>">
+<section class="section overview" id="<?php the_slide_id(); ?>">
 	<div class="section-content">
 		<?php if(isset($title) && $title != "" ): ?>
 		<header class="section-title">

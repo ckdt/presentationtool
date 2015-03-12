@@ -37,10 +37,9 @@ $(document).ready(function() {
 	if(!isPhone){ // Only do fullpage if it's not a phone device
 	    $('#fullpage').fullpage({
 	        menu: false,
-	        anchors:['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'],
 	        navigation: true,
+	        anchors: anchies,
 	        navigationPosition: 'right',
-	        navigationTooltips: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'],
 	        slidesNavigation: true,
 	        slidesNavPosition: 'bottom',
 	        verticalCentered: false,

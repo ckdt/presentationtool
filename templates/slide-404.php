@@ -1,4 +1,4 @@
-<section class="section notice" id="notice-<?php echo $GLOBALS['x']; ?>">
+<section class="section notice" id="<?php the_slide_id(); ?>">
 	<div class="section-content">
 		<header class="section-title">
 			<h2>notice</h2>
