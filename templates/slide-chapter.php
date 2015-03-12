@@ -3,8 +3,13 @@
 	$name = get_sub_field( 'chapter_name' );
 	$note = get_sub_field( 'chapter_note' );
 	$background  = get_sub_field( 'chapter_background' );
-?>
-<section class="section chapter" id="<?php the_slide_id(); ?>" style="background-image: url(<?php echo $background["sizes"]["large"]; ?>)">
+	if($background){
+		$style = 'style="background-image: url('. $background["sizes"]["large"].');"';
+	}else{
+		$style = '';
+	}
+?>	
+<section class="section chapter" id="<?php the_slide_id(); ?>" <?php echo $style; ?> >
 	<div class="section-content">
 
 		<?php if(isset($title) && $title != "" ): ?>

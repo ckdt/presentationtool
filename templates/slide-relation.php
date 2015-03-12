@@ -1,10 +1,14 @@
-<?php $rel = get_sub_field( 'default_relation' ); ?>
+<?php 
+$relations = get_sub_field( 'default_relation' ); 
+?>
 
-<?php if ( $slides = get_field( 'slides', $rel[0] ) ): ?>
+<?php foreach($relations as $rel): ?>
+
+<?php if ( $slides = get_field( 'slides', $rel) ): ?>
 
 	<?php if ( ! post_password_required() ): ?>
 	
-		<?php while ( has_sub_field( 'slides', $rel[0]  ) ): ?>
+		<?php while ( has_sub_field( 'slides', $rel ) ): ?>
 			<?php if ( get_row_layout() == 'chapter' ): // layout: Chapter ?>
 				<?php get_template_part( 'templates/slide', 'chapter' ); ?>
 			<?php endif; ?>
@@ -38,3 +42,7 @@
 <?php else: ?>
 	<?php get_template_part( 'templates/slide', '404' ); ?>
 <?php endif; ?>
+
+<?php 
+	endforeach;
+?>

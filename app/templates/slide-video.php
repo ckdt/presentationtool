@@ -4,8 +4,13 @@
 	$note = get_sub_field( 'video_note' );
 	$video = get_sub_field( 'video_url' );
 	$fallback  = get_sub_field( 'video_fallback' );
+	if($fallback){
+		$style = 'style="background-image: url('. $fallback["sizes"]["large"].');"';
+	}else{
+		$style = '';
+	}
 ?>
-<section class="section video" id="<?php the_slide_id(); ?>" style="background-image: url(<?php echo $fallback["sizes"]["large"]; ?>)">
+<section class="section video" id="<?php the_slide_id(); ?>" <?php echo $style; ?>>
 	<video loop muted controls="false" id="thevideo">
 		<source src="<?php echo $video; ?>" type="video/mp4">
 		<!-- <source src="video/284081672.webm" type="video/webm"> -->

@@ -4,8 +4,13 @@
 	$note = get_sub_field( 'text_note' );
 	$button = get_sub_field( 'text_button' );
 	$background  = get_sub_field( 'text_background' );
+	if($background){
+		$style = 'style="background-image: url('. $background["sizes"]["large"].');"';
+	}else{
+		$style = '';
+	}
 ?>
-<section class="section text" id="<?php the_slide_id(); ?>" style="background-image: url(<?php echo $background["sizes"]["large"]; ?>)">
+<section class="section text" id="<?php the_slide_id(); ?>" <?php echo $style; ?> >
 	<div class="section-content">
 		<?php if(isset($title) && $title != "" ): ?>
 		<header class="section-title">
