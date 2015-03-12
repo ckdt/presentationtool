@@ -1780,18 +1780,34 @@ strong {
 }
 .section.estimate {
   background: #F2F3F6;
+  padding: 10px;
 }
 .section.estimate .section-title h2 {
   color: #ADADAD;
 }
 .section.estimate .section-body .wrap .estimaterow {
   text-align: left;
-  margin: 0 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
 }
 .section.estimate .section-body .wrap .estimaterow .estimatecontainer {
+  width: 100%;
   float: left;
   background-color: #fff;
-  margin: 0 10px 20px;
+  margin: 0 0 20px;
 }
 .section.estimate .section-body .wrap .estimaterow .estimatecontainer .inner {
   padding: 35px 20px 64px;
@@ -1878,8 +1894,8 @@ strong {
 }
 .section.estimate .section-body .wrap .estimaterow .price .innerprice .pricebefore {
   text-decoration: line-through;
-  text-align: left;
-  margin: 10px 0 0 61px;
+  margin: 5px 0 7px;
+  height: 24px;
 }
 .section.estimate .section-body .wrap .estimaterow .price .innerprice h3 {
   margin: 0;
@@ -2060,6 +2076,7 @@ body {
   }
   .section.estimate {
     background: #F2F3F6;
+    padding: 30px;
   }
   .section.estimate .section-title h2 {
     color: #ADADAD;
@@ -2148,6 +2165,8 @@ body {
   }
   .section.estimate .section-body .wrap .estimaterow .price .innerprice .pricebefore {
     margin: 4px 0 0 0;
+    text-align: left;
+    height: 15px;
   }
   .section.estimate .section-body .wrap .estimaterow .price .innerprice h3 {
     font-size: 42px;
@@ -2214,6 +2233,7 @@ body {
   }
   .section.estimate {
     background: #F2F3F6;
+    padding: 0;
   }
   .section.estimate .section-title h2 {
     color: #ADADAD;
@@ -2304,8 +2324,9 @@ body {
   }
   .section.estimate .section-body .wrap .estimaterow .price .innerprice .pricebefore {
     text-decoration: line-through;
-    text-align: left;
-    margin: 10px 0 0 74px;
+    margin: 5px 0 7px;
+    text-align: center;
+    height: 24px;
   }
   .section.estimate .section-body .wrap .estimaterow .price .innerprice h3 {
     margin: 0;
@@ -2478,8 +2499,6 @@ body {
   }
   .section.estimate .section-body .wrap .estimaterow .price .innerprice .pricebefore {
     text-decoration: line-through;
-    text-align: left;
-    margin: 10px 0 0 74px;
   }
   .section.estimate .section-body .wrap .estimaterow .price .innerprice h3 {
     margin: 0;
