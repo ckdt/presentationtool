@@ -1921,6 +1921,7 @@ body {
   overflow: visible;
 }
 #one,
+#two,
 #three {
   background-color: transparent;
   background-image: url('../img/bluegreenhouse.jpg');
@@ -2170,7 +2171,7 @@ body {
   }
   .section.estimate .section-body .wrap .estimaterow .price .innerprice h3 {
     font-size: 42px;
-    font-weight: bold;
+    font-weight: normal;
     line-height: 56px;
     text-align: left;
   }
