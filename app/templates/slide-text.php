@@ -18,7 +18,7 @@
 			<div class="wrap">
 			<?php echo $statement; ?>
 
-			<?php if(isset($button)): ?>
+			<?php if($button): ?>
 			<p><a href="<?php echo $button[0]["button_url"];?>" class="button"><?php echo $button[0]["button_label"];?></a></p>
 			<?php endif; ?>
 			</div>

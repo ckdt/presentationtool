@@ -40,7 +40,7 @@ function business_theme_scripts(){
 add_action( 'wp_enqueue_scripts', 'business_theme_scripts' );
 
 function business_theme_admin_scripts() {
-    wp_register_style( 'add-admin-stylesheet', get_template_directory_uri().'/css/admin.theme.css');
+    wp_register_style( 'add-admin-stylesheet', get_template_directory_uri().'/css/admin.theme.min.css');
     wp_enqueue_style( 'add-admin-stylesheet' );
 }
 
@@ -181,6 +181,21 @@ function the_slide_id(){
 	array_push($slide_anchors,$anchor);
 	echo $slide;
 }
+// Custom Post status
+function custom_post_status(){
+	register_post_status( 'unread', array(
+		'label'                     => _x( 'Unread', 'post' ),
+		'public'                    => true,
+		'exclude_from_search'       => false,
+		'show_in_admin_all_list'    => true,
+		'show_in_admin_status_list' => true,
+		'label_count'               => _n_noop( 'Unread <span class="count">(%s)</span>', 'Unread <span class="count">(%s)</span>' ),
+	) );
+}
+add_action( 'init', 'custom_post_status' );
+
+
+
 
 // CUSTOM FIELDS
 

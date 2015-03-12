@@ -1,5 +1,5 @@
 [data-toolbar="very_simple"] iframe {
-  min-height: 80px;
+  height: 100px !important;
 }
 td.media-icon img[src$=".svg"],
 img[src$=".svg"].attachment-post-thumbnail {
