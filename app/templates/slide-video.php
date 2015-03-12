@@ -11,36 +11,32 @@
 	}
 ?>
 <section class="section video" id="<?php the_slide_id(); ?>" <?php echo $style; ?>>
-	<video loop muted controls="false" id="thevideo">
+	
+	<video loop muted controls="false">
 		<source src="<?php echo $video; ?>" type="video/mp4">
-		<!-- <source src="video/284081672.webm" type="video/webm"> -->
 	</video>
+
 	<div class="section-content">
 		
 		<?php if(isset($title) && $title != "" ): ?>
-		
 		<header class="section-title">
 			<h2><?php echo $title; ?></h2>
 		</header>
-		
 		<?php endif; ?>
 		
 		<?php if(isset($name) && $name != "" ): ?>
-
 		<div class="section-body">
 			<div class="wrap">
 				<h1><?php echo $name; ?></h1>
 			</div>
 		</div>
-
 		<?php endif; ?>
 
 		<?php if(isset($note) && $note != "" ): ?>
-
 		<footer class="section-footer">
 			<p><?php echo $note; ?></p>
 		</footer>
-
 		<?php endif; ?>
+
 	</div>
 </section>
