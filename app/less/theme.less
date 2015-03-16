@@ -462,6 +462,8 @@ strong{
 	}
 	&.estimate{
 		background: #F2F3F6;
+		padding: 10px;
+
 		.section-title h2{
 			color: #ADADAD;
 		}
@@ -469,12 +471,27 @@ strong{
 			.wrap{
 				.estimaterow{
 					text-align: left;
-					margin:0 auto;
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-justify-content: center;
+					-ms-flex-pack: center;
+					justify-content: center;
+					-webkit-flex-flow: row wrap;
+					-ms-flex-flow: row wrap;
+					flex-flow: row wrap;
+					-webkit-align-items: flex-start;
+					-ms-flex-align: start;
+					align-items: flex-start;
+					-webkit-align-content: center;
+					-ms-flex-line-pack: center;
+					align-content: center;
 
 					.estimatecontainer{
+						width:100%;
 						float: left;
 						background-color: #fff;
-						margin:0 10px 20px;
+						margin:0 0 20px;
 						.inner{
 							padding: 35px 20px 64px;
 
@@ -568,8 +585,8 @@ strong{
 
 							.pricebefore{
 								text-decoration: line-through;
-								text-align: left;
-								margin: 10px 0 0 61px;
+								margin: 5px 0 7px;
+								height: 24px;
 							}
 							h3{
 								margin:0;
@@ -603,6 +620,7 @@ html, body{
 }
 
 #one,
+#two,
 #three{
 	background-color: transparent;
 	background-image: url('../img/bluegreenhouse.jpg');

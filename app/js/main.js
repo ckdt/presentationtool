@@ -56,13 +56,23 @@ $(document).ready(function() {
 	        		$(current).find('video').get(0).play();
 	        	}
 	        },
-	        afterRender: function(){},
+
+	        afterRender: function(){
+	        	var current = $(this);
+		        var firstVidSlide = $('section.video').attr('data-anchor');
+		        
+		        if(firstVidSlide == "s-1"){
+		        	$(current).find('video').get(0).play();
+	        	}
+	        },
 	        afterResize: function(){},
 	        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
 	        },
 	        onSlideLeave: function(anchorLink, index, slideIndex, direction){
 	        }
 	    });
+    }else{
+    	$('video').remove();
     }
 
 // ################  Fit slide ####################################
