@@ -1,45 +1,48 @@
 <?php
+
 function business_theme_setup() {
+	// Theme Setup
 	load_theme_textdomain( 'business', get_template_directory() . '/lang' );
+	
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
-	add_post_type_support( 'page', 'excerpt' );
 
-	// Clean header
 	remove_action ('wp_head', 'wp_generator');
 	remove_action ('wp_head', 'rsd_link');
 	remove_action ('wp_head', 'wlwmanifest_link');
 	remove_action ('wp_head', 'wp_shortlink_wp_head');
-
 }
+
 add_action( 'after_setup_theme', 'business_theme_setup' );
 
 function business_theme_scripts(){
-
+	// Theme Scripts and Styles
 	if ( !is_admin() ) {
+		// Register Styles
 		wp_enqueue_style('business_style', get_template_directory_uri() . '/css/theme.min.css', false, null);
-
+		
+		// Register Scripts
 		wp_deregister_script( 'jquery' );
-		//wp_register_script( 'jquery', "http" . ( $_SERVER['SERVER_PORT'] == 443 ? "s" : "" ) . "://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js", array(), false, true );
 
 		wp_register_script( 'jquery', get_template_directory_uri() . '/js/vendor/jquery-1.11.2.min.js', array(), false, true );
 		wp_register_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.8.3.min.js' );
-		
 		wp_register_script( 'main', get_template_directory_uri() . '/js/scripts.min.js', array( 'jquery' ), false, true );
+		
 		wp_enqueue_script( 'modernizr' );
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'main' );
 
 		wp_localize_script('main', 'WPDATA', array('ajaxurl' => admin_url('admin-ajax.php')));
 	}
-
 }
+
 add_action( 'wp_enqueue_scripts', 'business_theme_scripts' );
 
 function business_theme_admin_scripts() {
+	// Admin Scripts and Styles
     wp_register_style( 'add-admin-stylesheet', get_template_directory_uri().'/css/admin.theme.min.css');
     wp_enqueue_style( 'add-admin-stylesheet' );
 }
@@ -48,6 +51,7 @@ add_action( 'admin_enqueue_scripts', 'business_theme_admin_scripts' );
 
 
 function business_register_customposts() {
+	// Theme Custom Post Types
     register_post_type('presentation',
         array(
             'labels' => array(
@@ -99,9 +103,11 @@ function business_register_customposts() {
 		)
 	);
 }
+
 add_action('init', 'business_register_customposts');
 
 function business_remove_admin_menus(){
+	// Admin remove stuff we don't need
 	global $menu;
 	$restricted = array(__('Posts'),__('Comments'),__('Pages'));
 	end ($menu);
@@ -110,9 +116,11 @@ function business_remove_admin_menus(){
 		if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
 	}
 }
+
 add_action('admin_menu', 'business_remove_admin_menus');
 
-function business_customm_afc_toolbars( $toolbars ){
+function business_customm_acf_toolbars( $toolbars ){
+	// Add Custom WYSIWYG field to ACF
 	$toolbars['Very Simple' ] = array();
 	$toolbars['Very Simple' ][1] = array('bold' , 'italic' , 'underline' );
 
@@ -120,15 +128,14 @@ function business_customm_afc_toolbars( $toolbars ){
 	    unset( $toolbars['Full' ][2][$key] );
 	}
 
-	// remove the 'Basic' toolbar completely
 	unset( $toolbars['Basic' ] );
-
-	// return $toolbars - IMPORTANT!
 	return $toolbars;
 }
-add_filter( 'acf/fields/wysiwyg/toolbars' , 'business_customm_afc_toolbars'  );
 
-function my_password_form() {
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'business_customm_acf_toolbars'  );
+
+function business_custom_password_form() {
+	// Create Custom Password form
     global $post;
     $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
     $o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
@@ -137,22 +144,23 @@ function my_password_form() {
     ';
     return $o;
 }
-add_filter( 'the_password_form', 'my_password_form' );
 
+add_filter( 'the_password_form', 'business_custom_password_form' );
 
-
-##################################################################
-
-# enable images in media uploader
-
-##################################################################
-function cc_mime_types( $mimes ){
+function business_custom_mime_types( $mimes ){
+	// Allow Custom Mime types in the WP uploader
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
-add_filter( 'upload_mimes', 'cc_mime_types' );
 
-// CREATE UNIQUE IDS for slides
+add_filter( 'upload_mimes', 'business_custom_mime_types' );
+
+/* 
+/ ----------------------------------------------
+/ CUSTOM SLIDE FUNCTIONALITY
+/ ----------------------------------------------
+*/
+
 $slide_id = 0;
 $slide_prefix = 'slide-';
 $anchor_prefix = 's-';
@@ -181,7 +189,13 @@ function the_slide_id(){
 	array_push($slide_anchors,$anchor);
 	echo $slide;
 }
-// CUSTOM FIELDS
+
+/* 
+/ ----------------------------------------------
+/ ACF FIELD EXPORT
+/ ----------------------------------------------
+*/
+
 if( function_exists('register_field_group') ):
 
 register_field_group(array (
@@ -1185,8 +1199,4 @@ register_field_group(array (
 	'instruction_placement' => 'label',
 	'hide_on_screen' => '',
 ));
-
 endif;
-
-
-
